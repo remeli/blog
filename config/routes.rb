@@ -1,7 +1,7 @@
 Blog::Application.routes.draw do
 
-  get "users/new"
-  
+  match "sign_up" => "users#new", :as => "sign_up"
+  resources :users
   resources :posts
 
   # The priority is based upon order of creation:
