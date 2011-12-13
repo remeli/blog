@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+  <div id="header">
+    <h1>Our blog</h1>
+  </div>
+  <div id="maincontent">
+    <div id="sidebar">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Посты</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    &copy; Our blog
+  </div>
+</div>
 </body>
 </html>
