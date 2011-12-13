@@ -1,8 +1,7 @@
 Blog::Application.routes.draw do
-  get "static/index"
 
   get "users/new"
-
+  
   resources :posts
 
   # The priority is based upon order of creation:
@@ -54,7 +53,7 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'static#index'
 
   # See how all your routes lay out with "rake routes"
 
