@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "static/index"
+
   get "users/new"
 
   resources :posts
