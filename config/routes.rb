@@ -1,9 +1,13 @@
 Blog::Application.routes.draw do
+  resources :pages
+
   resources :categories
 
   match "sign_up" => "users#new", :as => "sign_up"
   resources :users
   resources :posts
+  
+  match 'static/:permalink', :to => "pages#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
