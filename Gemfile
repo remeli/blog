@@ -13,7 +13,7 @@ group :assets do
 end
 
 # annotate model:
-gem "annotate", "~> 2.4.0"
+gem 'annotate', '2.4.1.beta1'
 
 # js framework:
 gem 'jquery-rails'
