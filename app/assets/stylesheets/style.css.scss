@@ -1,12 +1,26 @@
-// border variables:
+// VARIABLES:
+
+// border:
 $border-color:#A3A39A;
 $border-style:solid;
-
+// colors:
+$white:#fff;
+$black:#000;
 // fonts:
 $h1:40px "Graublau Web", Helvetica, sans-serif;
 $main-font:14px "Graublau Web", Helvetica, sans-serif;
 $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 
+// MIXINS
+// radius:
+@mixin radius{
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  -o-border-radius:5px;
+}
+
+// MAIN RULES:
 #wrapper{
   // start rules
   margin:auto;
@@ -121,4 +135,16 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     }
   }
   // end rules
+}
+
+
+// notice
+#notice{
+  @include radius;
+  border:1px solid #A8C990;
+  background:#A8C990;
+  color:$white;
+  padding:3px;
+  text-align:center;
+  margin:10px 0px 20px 0px;
 }

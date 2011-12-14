@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      respond_with(@user, :location => root_path, :notice => 'Вы успешно зарегистрировались')
+      flash[:notice] = "Вы успешно зарегистрировались"
+      respond_with(@user, :location => root_path)
     else
       render 'new'
     end
