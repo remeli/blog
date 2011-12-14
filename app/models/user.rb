@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
   
-  validates :password, :confirmation => true
-  validates :password, :presence => true, :on => :create
-  validates :email, :presence => true
-  validates :email, :uniqueness => true
+  validates :password, :confirmation => {:message => "Пароли не совпадают"}
+  validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
+  validates :email, :presence => {:message => "Пустой e-mail"}
+  validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
   
   def encrypt_password
     if password.present?
