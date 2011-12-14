@@ -13,13 +13,13 @@ group :assets do
 end
 
 # annotate model:
-gem "annotate", "~> 2.4.0"
+gem 'annotate', '2.4.1.beta1'
 
 # js framework:
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # In future:
 # gem 'unicorn'
@@ -28,4 +28,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # test:
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
+end
+
+group :development do
+  gem 'rails-dev-tweaks', '~> 0.5.2'
 end

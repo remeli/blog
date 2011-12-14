@@ -1,3 +1,37 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+label{
+  text-shadow: 0px 1px 0px #DBDBDB;
+  display:block;
+  margin-bottom:2px;
+}
+input[type='text'], input[type='password']{
+  background:#f0f0f0;
+  border:none;
+  font-size: 13px;
+  padding: 6px 3px 4px;
+  outline: none !important;
+  border: solid 1px #BBB;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-bottom:10px;
+  width:235px;
+  &:focus{
+    background:#fff;
+  }
+}
+.errors{
+  margin-bottom:20px;
+  li{
+    color:#893234;
+    font-size:11px;
+    margin-bottom:5px;
+  }
+}
+.button{
+  input{
+    margin-top:10px;
+  }
+}

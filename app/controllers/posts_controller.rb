@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   
   def index
     @posts=Post.all
-    #redirect_to posts_path(@posts) 
   end
   
   def show
