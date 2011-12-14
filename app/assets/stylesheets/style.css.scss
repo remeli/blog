@@ -87,10 +87,28 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          padding:10px 0px 10px 10px;
        }
        .submit{
-         padding:5px 0px 10px 5px;
+         padding:5px 0px 10px 10px;
        }
        border:1px solid #ccc;
        margin-bottom:20px;
+     }
+     
+     // sign block:
+     #sign{
+       font-size:12px;
+       margin-bottom:20px;
+       padding:8px;
+       a{
+         color:#C06D35;
+         font-weight:bold;
+         display: inline-block;
+         margin-bottom:5px;
+         padding:2px;
+         &:hover{
+           background:#C06D35;
+           color:$white;
+         }
+       }
      }
      
      ul{
