@@ -13,6 +13,26 @@
   </div>
   <div id="maincontent">
     <div id="sidebar">
+      <% if current_user %>
+        <!-- user info -->
+        <div id="userinfo">
+          <h4>Ваш профиль:</h4>
+          <div class="user-actions">
+            <p class="email">
+              <%= current_user.email %>
+            </p>
+            <p class="submit">
+              <%= link_to "Выйти", log_out_path %>
+            </p>
+          </div>
+        </div>
+        <!-- end user info -->
+      <% else %>
+        <div id="sign">
+          <p><%= link_to "Регистрация", sign_up_path %></p>
+          <p><%= link_to "Войти", log_in_path %></p>
+        </div>
+      <% end %>
       <ul>
         <li><a href="#">Главная</a></li>
         <li><a href="#">Посты</a></li>

@@ -75,6 +75,24 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
      padding:10px 5px 10px 5px;
      width:250px;
      
+     // user info:
+     #userinfo{
+       font-size:11px;
+       h4{
+         background:#7E7C80;
+         color:$white;
+         padding:5px;
+       }
+       .email{
+         padding:10px 0px 10px 10px;
+       }
+       .submit{
+         padding:5px 0px 10px 5px;
+       }
+       border:1px solid #ccc;
+       margin-bottom:20px;
+     }
+     
      ul{
        list-style-type: none;
        margin-left:10px;
@@ -137,9 +155,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   // end rules
 }
 
-
 // notice
 #notice{
+  // begin rules
   @include radius;
   border:1px solid #A8C990;
   background:#A8C990;
@@ -147,4 +165,5 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   padding:3px;
   text-align:center;
   margin:10px 0px 20px 0px;
+  // end rules
 }
