@@ -2,6 +2,7 @@
 class UsersController < ApplicationController
   
   respond_to :html
+  layout "signup"
   
   def new
     @user = User.new
