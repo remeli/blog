@@ -1,14 +1,17 @@
 #encoding:UTF-8
 class UsersController < ApplicationController
   
+  respond_to :html
+  
   def new
     @user = User.new
+    respond_with(@user)
   end
   
   def create
     @user = User.create(params[:user])
     if @user.save
-      redirect_to root_path, :notice => "Вы успешно авторизовались"
+      respond_with(@user, :location => root_path, :notice => "Вы успешно зарегистрировались")
     else
       render "new"
     end
