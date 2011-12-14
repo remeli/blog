@@ -1,0 +1,10 @@
+<p>Все статьи:</p><br />
+<% @posts.each do |post| %>
+	<br /><p><b><%= post.title %></b></p><br />
+	<%= post.description %><br />
+	<%= link_to "view", post_path(post) %>
+	<%= link_to "edit", edit_post_path(post) %>
+	<%= link_to "delete", post_path(post), :confirm => 'Вы уверены?', 
+																				 :method => :delete %>
+<% end %>
+<br /><p><%= link_to "new post", new_post_path %></p>
