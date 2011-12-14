@@ -1,0 +1,11 @@
+<p>
+	<%= form_for @page do |p| %>
+		<%= p.label :Название %><br />
+		<%= p.text_field :name  %><br />
+		<%= p.label :Адрес %><br />
+		<%= p.text_field :permalink %><br />
+		<%= p.label :Содержание %><br />
+		<%= p.text_area :content %><br />
+		<%= p.submit "Добавить" %><br />
+	<% end %>
+</p>

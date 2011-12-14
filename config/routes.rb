@@ -1,12 +1,16 @@
 Blog::Application.routes.draw do
-  
+
+  resources :pages
+  resources :categories
+
   match "sign_up" => "users#new", :as => "sign_up"
   match "log_in" => "sessions#new", :as => "log_in"
   match "log_out" => "sessions#destroy", :as => "log_out"
-  resources :categories
   resources :sessions
   resources :users
   resources :posts
+  
+  match 'static/:permalink', :to => "pages#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

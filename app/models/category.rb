@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 class Category < ActiveRecord::Base
   # == Schema Information
   #
