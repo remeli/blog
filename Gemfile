@@ -29,3 +29,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
 end
+
+group :development do
+  gem 'rails-dev-tweaks', '~> 0.5.2'
+end
