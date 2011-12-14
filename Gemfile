@@ -19,7 +19,7 @@ gem 'annotate', '2.4.1.beta1'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # In future:
 # gem 'unicorn'
