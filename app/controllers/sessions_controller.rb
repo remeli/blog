@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:notice] = 'Вы успешно вошли'
-      respond_with(:location => root_url)
+      redirect_to root_path, :notice => "Вы успешно вошли"
     else
       flash.now.alert = 'Не верный пароль или email'
       render 'new'
