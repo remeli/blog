@@ -1,0 +1,28 @@
+<h1>Вход:</h1>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <h1>Ошибки:</h1>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>      
+    </ul>
+  <% end %>
+  <p>
+    <%= f.label :email, "Email:" %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, "Пароль:" %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Повторите пароль:" %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p class="button">
+    <%= f.submit "Зарегистрироваться" %>
+  </p>
+<% end %>
