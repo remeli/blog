@@ -1,12 +1,26 @@
-// border variables:
+// VARIABLES:
+
+// border:
 $border-color:#A3A39A;
 $border-style:solid;
-
+// colors:
+$white:#fff;
+$black:#000;
 // fonts:
 $h1:40px "Graublau Web", Helvetica, sans-serif;
 $main-font:14px "Graublau Web", Helvetica, sans-serif;
 $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 
+// MIXINS
+// radius:
+@mixin radius{
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  -o-border-radius:5px;
+}
+
+// MAIN RULES:
 #wrapper{
   // start rules
   margin:auto;
@@ -61,6 +75,42 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
      padding:10px 5px 10px 5px;
      width:250px;
      
+     // user info:
+     #userinfo{
+       font-size:11px;
+       h4{
+         background:#7E7C80;
+         color:$white;
+         padding:5px;
+       }
+       .email{
+         padding:10px 0px 10px 10px;
+       }
+       .submit{
+         padding:5px 0px 10px 10px;
+       }
+       border:1px solid #ccc;
+       margin-bottom:20px;
+     }
+     
+     // sign block:
+     #sign{
+       font-size:12px;
+       margin-bottom:20px;
+       padding:8px;
+       a{
+         color:#C06D35;
+         font-weight:bold;
+         display: inline-block;
+         margin-bottom:5px;
+         padding:2px;
+         &:hover{
+           background:#C06D35;
+           color:$white;
+         }
+       }
+     }
+     
      ul{
        list-style-type: none;
        margin-left:10px;
@@ -95,4 +145,43 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
  }
  
 // end rules
+}
+
+
+// signup layout:
+#signup{
+  // begin rules
+  height:627px;
+  background-image:url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size:100%;
+  font: 15px helvetica, verdana, arial, times, "Times New Roman", sans-serif;
+  
+  // content:
+  #content{
+    width:400px;
+    color:#848481;
+    margin:0 auto;
+    position:relative;
+    top:130px;
+    h1{
+      margin-bottom:20px;
+      font-size:40px;
+      text-shadow: 0px 1px 0px #DBDBDB; 
+    }
+  }
+  // end rules
+}
+
+// notice
+#notice{
+  // begin rules
+  @include radius;
+  border:1px solid #A8C990;
+  background:#A8C990;
+  color:$white;
+  padding:3px;
+  text-align:center;
+  margin:10px 0px 20px 0px;
+  // end rules
 }
