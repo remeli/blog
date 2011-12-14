@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "sessions/new"
+
   resources :categories
 
   match "sign_up" => "users#new", :as => "sign_up"
