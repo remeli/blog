@@ -2,9 +2,9 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <ul class="errors">
-      <% @user.errors.full_messages.each do |message| %>
+      <% @user.errors.each do |key, value| %>
         <li>
-          <%= message %>
+          <%= value %>
         </li>
       <% end %>      
     </ul>
