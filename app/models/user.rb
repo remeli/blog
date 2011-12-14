@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   #
   
   attr_accessor :password
+  attr_accessible :email, :password, :password_confirmation
   before_save :encrypt_password
   
   validates :password, :confirmation => {:message => "Пароли не совпадают"}
@@ -36,4 +37,5 @@ class User < ActiveRecord::Base
     end
   end
   
+  # TODO: сделать валидацию email(формат), длину пароля
 end
