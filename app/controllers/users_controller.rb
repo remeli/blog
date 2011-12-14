@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   
   respond_to :html
-  layout "signup"
+  layout 'signup'
   
   def new
     @user = User.new
@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user])
     if @user.save
-      respond_with(@user, :location => root_path, :notice => "Вы успешно зарегистрировались")
+      respond_with(@user, :location => root_path, :notice => 'Вы успешно зарегистрировались')
     else
-      render "new"
+      render 'new'
     end
   end
 end
