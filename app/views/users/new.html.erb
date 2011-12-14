@@ -1,8 +1,7 @@
 <h1>Регистрация</h1>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <h1>Ошибки:</h1>
-    <ul>
+    <ul class="errors">
       <% @user.errors.full_messages.each do |message| %>
         <li>
           <%= message %>
