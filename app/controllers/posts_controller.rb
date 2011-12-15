@@ -1,15 +1,17 @@
 #encoding:UTF-8
+
 class PostsController < ApplicationController
   
   def index
 
+
     @posts = Post.all
 
   end
-  
+    
   def show
-    @post = Post.find(paramd[:id])
-    redirect_to post_path(@post)    
+    @post = Post.find(params[:id])
+
   end
   
   def new
@@ -17,7 +19,9 @@ class PostsController < ApplicationController
   end
   
   def edit
-  @post = Post.find(params[:id])     
+
+    @post = Post.find(params[:id])     
+
   end
   
   def create
