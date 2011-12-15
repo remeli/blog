@@ -2,6 +2,8 @@
 
 class CommentsController < ApplicationController
   
+  before_filter :find_post
+  
   def new
     @comment = Comment.new
   end
@@ -9,7 +11,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     if @comment.save
-      redirect_to @post
+      redirect_to :back
     else
       render :action => 'new'
     end
@@ -22,6 +24,12 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+  end
+  
+  private
+  
+  def find_post
+    @post = Post.find(params[:post_id])
   end
   
 end
