@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
+    
+  protected
+  
+    def authorize
+      unless User.find_by_id(session[:user_id])
+        redirect_to(log_in_path, :notice => "Пожалуйста авторизируйтесь")
+      end
+    end
 end
