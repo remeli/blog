@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   protected
   
     def authorize
-      unless User.find(session[:user_id])
-        redirect_to log_in_path, :notice => "Пожалуйста авторизируйтесь"
+      unless User.find_by_id(session[:user_id])
+        redirect_to(log_in_path, :notice => "Пожалуйста авторизируйтесь")
       end
     end
 end
