@@ -1,4 +1,3 @@
-<p>
 <% @pages.each do |page| %>
 	<%= page.name %><br />
 	<%= page.permalink %><br />
@@ -8,4 +7,3 @@
 	<%= link_to "destroy", page_path(page), :confirm => 'Вы уверены?', 
 																					 :method => :delete %>
 <% end %>
-</p>

@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do
 
+  resources :comments
   resources :pages
   resources :categories
 
