@@ -7,9 +7,10 @@ class CommentsController < ApplicationController
   end
   
   def create
+    
     @comment = Comment.new(params[:comment])
     if @comment.save
-      redirect_to @post
+      redirect_to :back
     else
       render :action => 'new'
     end
