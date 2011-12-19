@@ -39,5 +39,13 @@ class User < ActiveRecord::Base
     end
   end
   
+  def self.verify_access(user)
+    if user.admin == true
+      true
+    else
+      false
+    end
+  end
+  
   # TODO: сделать валидацию email(формат), длину пароля
 end
