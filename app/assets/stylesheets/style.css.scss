@@ -285,7 +285,37 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   font-size:11px;
   background:#F5F5F5;
   color:#7D1431;
-=======
+}
+
 #page_show{
 	
+}
+
+// admin:
+#admin{
+  // begin rules:
+  width:1000px;
+  margin:0 auto;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  font:$main-font;
+  #header{
+    height:80px;
+    padding-top:30px;
+  }
+  h1{
+    font:$h1;
+    text-align:center;
+  }
+  a{
+    text-decoration:none;
+    color:#ccc;
+    &:hover{
+      color:#eee;
+    }
+  }
+  #content{
+    padding:10px;
+  }
+  // end rules
 }
