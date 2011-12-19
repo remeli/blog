@@ -220,6 +220,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   color:#8F8F8F;
   h1{
     font-size:20px;
+    margin-bottom:10px;
   }
   .field{
     margin-top:20px;
@@ -246,4 +247,23 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-top:10px;
   }
 
+}
+
+// errors:
+#errorExplanation{
+  p{
+    font-size:20px;
+    margin:5px;
+  }
+  ul{
+    margin-left:20px;
+  }
+  ul li{
+    list-style-type:square;
+  }
+  border:1px solid #7D1D24;
+  padding:5px;
+  font-size:11px;
+  background:#F5F5F5;
+  color:#7D1431;
 }
