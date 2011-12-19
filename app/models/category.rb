@@ -17,5 +17,13 @@ class Category < ActiveRecord::Base
   def self.ascname
     order("categories.name ASC")
   end
+  
+  def button_value
+    if new_record?
+      "Добавить категорию"
+    else
+      "Редактировать категорию"
+    end
+  end
 end
 
