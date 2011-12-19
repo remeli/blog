@@ -1,2 +1,4 @@
 <p><h1><%= @post.title %></h1></p><br />
-<%= @post.description %>
+<%= @post.description %><br /><br />
+<%= render :partial => "shared/comments" %><br /><br />
+<%= render :partial => "shared/comment_form" %>
