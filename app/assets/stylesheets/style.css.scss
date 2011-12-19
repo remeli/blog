@@ -250,6 +250,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 
 // errors:
 #errorExplanation{
+  @include radius;
   p{
     font-size:20px;
     margin:5px;
@@ -261,7 +262,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     list-style-type:square;
   }
   border:1px solid #7D1D24;
-  padding:5px;
+  padding:10px;
   font-size:11px;
   background:#F5F5F5;
   color:#7D1431;
