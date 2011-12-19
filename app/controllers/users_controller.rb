@@ -13,8 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Вы успешно зарегистрировались"
-      user = User.authenticate(params[:email], params[:password])
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       respond_with(@user, :location => root_path)
     else
       render 'new'
