@@ -1,5 +1,15 @@
-<% @categories.each do |c| %>
-  <div>
-    <%= c.name %>
-  </div>
+<% flash.each do |name, msg| %>
+  <p id="flash"><%= msg %></p>
 <% end %>
+<ul>
+  <% @categories.each do |c| %>
+    <li>
+      <%= link_to c.name, c %>
+      <div>
+        <%= link_to "Показать", c %>
+        <%= link_to "Редактировать", edit_admin_category_path(c) %>
+        <%= link_to "Удалить", admin_category_path(c), :method => :delete, :confirm => "Вы уверены?" %>
+      </div>
+    </li>
+  <% end %>
+</ul>

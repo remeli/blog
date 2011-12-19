@@ -1,6 +1,7 @@
 # encoding:UTF-8
 class Admin::CategoriesController < ApplicationController
-  
+
+  layout 'admin'  
   respond_to :html
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
   
@@ -43,5 +44,7 @@ class Admin::CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    flash[:notice] = "Категория успешно удалена"
+    redirect_to admin_categories_path
   end
 end
