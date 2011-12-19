@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   
   def admin?(user)
-    true if user.verify_access
+    true if User.verify_access(user)
   end
   
 end
