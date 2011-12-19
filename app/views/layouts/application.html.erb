@@ -39,6 +39,14 @@
         <li><a href="#">О нас</a></li>
         <li><a href="#">Контакты</a></li>
       </ul>
+			<div id="categories">
+				<div class="categories_title">Категории:</div>
+					<% Category.all.each do |category| %>
+						<div class="category_link">
+							<%= link_to category.name, category_path(category) %>
+						</div>
+					<% end %>	
+			</div>
     </div>
     <div id="content">
       <% if notice %>

@@ -118,6 +118,22 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          margin-top:5px;
        }
      }
+
+		#categories{
+			margin-top: 20px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			padding-bottom:3px;
+			.categories_title{
+				background:#7E7C80;
+				color:$white;
+				padding:5px;
+				margin-bottom:3px;
+			}
+			.category_link{
+				padding:3px;
+			}
+		}
      
    }
    
@@ -184,4 +200,8 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   text-align:center;
   margin:10px 0px 20px 0px;
   // end rules
+}
+
+#page_show{
+	
 }
