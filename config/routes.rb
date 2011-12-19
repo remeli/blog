@@ -14,6 +14,7 @@ Blog::Application.routes.draw do
   match 'static/:permalink', :to => "pages#show"
   
   # admin:
+  match "admin" => "admin#index", :as => "admin"
   namespace :admin do
     resources :categories
   end
