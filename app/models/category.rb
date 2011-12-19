@@ -18,3 +18,4 @@ class Category < ActiveRecord::Base
     order("categories.name ASC")
   end
 end
+

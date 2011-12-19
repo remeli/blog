@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   #  created_at    :datetime
   #  updated_at    :datetime
   #
+
   
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation

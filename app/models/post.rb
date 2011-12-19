@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
   #  updated_at  :datetime
   #  category_id :integer
   #
+  
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
