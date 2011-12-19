@@ -148,6 +148,22 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          margin-top:5px;
        }
      }
+
+		#categories{
+			margin-top: 20px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			padding-bottom:3px;
+			.categories_title{
+				background:#7E7C80;
+				color:$white;
+				padding:5px;
+				margin-bottom:3px;
+			}
+			.category_link{
+				padding:3px;
+			}
+		}
      
    }
    
@@ -216,7 +232,6 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   // end rules
 }
 
-
 // add post form
 #add-post-from-user{
   padding:0px 10px 0px 10px;
@@ -270,6 +285,10 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   font-size:11px;
   background:#F5F5F5;
   color:#7D1431;
+}
+
+#page_show{
+	
 }
 
 // admin:
