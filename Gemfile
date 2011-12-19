@@ -33,3 +33,5 @@ end
 group :development do
   gem 'rails-dev-tweaks', '~> 0.5.2'
 end
+
+gem "kaminari"

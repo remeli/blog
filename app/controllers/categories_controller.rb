@@ -1,46 +1,55 @@
 #encoding: UTF-8
-
 class CategoriesController < ApplicationController
+  
+  before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+  respond_to :html
   
   def index
     @categories = Category.all
+    respond_with @categories
+  end
+  
+  def show
+    @category = Category.find(params[:id])
+    respond_with @category
+    # TODO: переделать
+    @posts = @category.posts
   end
   
   def new
     @category = Category.new
+    respond_with @category 
   end
   
   def create
     @category = Category.new(params[:category])
     if @category.save
-      redirect_to category_path(@category), :notice => "Категория добавлена"
+      flash[:notice] = "Категория успешно добавлена"
+      respond_with(@category, :location => root_path)
     else
-      render :action => 'new', :notice => "Произошла ошибка. Проверьте правильность заполненных полей."
+      render 'new'
     end
   end
-  
-  def show
-    @category = Category.find(params[:id])
-    @posts = @category.posts
-  end
+
   
   def edit
     @category = Category.find(params[:id])
+    respond_with(@category)
   end
   
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
-      redirect_to category_path(@category), :notice => "Категория обновлена"
+      flash[:notice] = "Категория успешно обновлена"
+      respond_with(@category, :location => @category)
     else
-      render :action => 'edit', :notice => "Произошла ошибка"
+      render 'edit'
     end
   end
   
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to categories_path
   end
   
 end

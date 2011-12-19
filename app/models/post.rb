@@ -18,6 +18,6 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   validates :title, :description, :presence => true
   validates :title, :uniqueness => true, :length =>{ :within => 2..25 } 
-
+  default_scope order('created_at DESC')
 end
 
