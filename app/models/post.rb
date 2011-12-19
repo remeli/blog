@@ -16,8 +16,10 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
-  validates :title, :description, :presence => true
-  validates :title, :uniqueness => true, :length =>{ :within => 2..25 } 
+  # validates :title, :description, :presence => 
+  validates :title, :presence => { :message => 'Название не может быть пустым' }
+  validates :title, :length => { :within => 2..25, :message => 'Название короткое' } 
+  validates :description, :presence => {:message => 'Пост не может быть пустым'  }
   
   def button_value
     if new_record?
