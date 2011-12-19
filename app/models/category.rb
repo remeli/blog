@@ -13,4 +13,17 @@ class Category < ActiveRecord::Base
 
   has_many :posts, :dependent => :destroy
   validates :name, :presence => true, :length => {:minimum => 3, :maximum => 140}
+  
+  def self.ascname
+    order("categories.name ASC")
+  end
+  
+  def button_value
+    if new_record?
+      "Добавить категорию"
+    else
+      "Редактировать категорию"
+    end
+  end
 end
+

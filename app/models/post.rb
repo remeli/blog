@@ -13,11 +13,24 @@ class Post < ActiveRecord::Base
   #  updated_at  :datetime
   #  category_id :integer
   #
+  
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
-  validates :title, :description, :presence => true
-  validates :title, :uniqueness => true, :length =>{ :within => 2..25 } 
+  
+  # validates:
+  validates :title, :presence => { :message => 'Название не может быть пустым' }
+  validates :title, :length => { :within => 2..25, :message => 'Название короткое' } 
+  validates :description, :presence => { :message => 'Пост не может быть пустым'  }
+  validates :category_id, :presence => { :message => 'Категория не выбрана' }
+  
+  def button_value
+    if new_record?
+      "Добавить пост"
+    else
+      "Редактировать пост"
+    end
+  end
 
 end
 

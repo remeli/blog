@@ -1,12 +1,12 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-label{
+#signup label{
   text-shadow: 0px 1px 0px #DBDBDB;
   display:block;
   margin-bottom:2px;
 }
-input[type='text'], input[type='password']{
+#signup input[type='text'], input[type='password']{
   background:#f0f0f0;
   border:none;
   font-size: 13px;
@@ -22,7 +22,7 @@ input[type='text'], input[type='password']{
     background:#fff;
   }
 }
-.errors{
+#signup .errors{
   margin-bottom:20px;
   li{
     color:#893234;
@@ -30,7 +30,7 @@ input[type='text'], input[type='password']{
     margin-bottom:5px;
   }
 }
-.button{
+#signup .button{
   input{
     margin-top:10px;
   }

@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   
   def new
     @category = Category.new
-    respond_with @category 
+    respond_with @category
   end
   
   def create
