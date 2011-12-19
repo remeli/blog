@@ -1,0 +1,14 @@
+<div id="userinfo">
+  <h4>Ваш профиль:</h4>
+  <div class="user-actions">
+    <p class="email">
+      <%= current_user.email %>
+    </p>
+    <p class="add-post">
+      <%= link_to "Добавить пост", new_post_path, :method => :get %>
+    </p>
+    <p class="submit">
+      <%= link_to "Выйти", log_out_path %>
+    </p>
+  </div>
+</div>
