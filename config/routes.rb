@@ -11,7 +11,7 @@ Blog::Application.routes.draw do
   resources :users
   resources :posts
   
-  match '/:permalink', :to => "pages#show"
+  # match '/:permalink', :to => "pages#show"
   match 'static/:permalink', :to => "pages#show"
   
   # admin:
