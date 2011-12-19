@@ -11,7 +11,7 @@ Blog::Application.routes.draw do
   resources :users
   resources :posts
   
-  match 'static/:permalink', :to => "pages#show"
+  match '/:permalink', :to => "pages#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
