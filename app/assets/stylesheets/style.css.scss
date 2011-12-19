@@ -20,8 +20,23 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   -o-border-radius:5px;
 }
 
+@mixin myinputs{
+  border:1px solid #ccc;
+  height:20px;
+  font-size:16px;
+  padding:4px;
+  color:#8F8F8F;
+}
+
 // MAIN RULES:
 #wrapper{
+  a{
+    color:#8F8F8F;
+    text-decoration:none; 
+    &:hover{
+      color:#767676;
+    }
+  }
   // start rules
   margin:auto;
   width:960px;
@@ -48,6 +63,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
  #header{
    height:80px;
    border-bottom:1px solid $border-color;
+   background:#eee;
    padding-top: 20px;
    h1{
     font: $h1;
@@ -195,4 +211,39 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   text-align:center;
   margin:10px 0px 20px 0px;
   // end rules
+}
+
+
+// add post form
+#add-post-from-user{
+  padding:0px 10px 0px 10px;
+  color:#8F8F8F;
+  h1{
+    font-size:20px;
+  }
+  .field{
+    margin-top:20px;
+    font-size:18px;
+    label{
+      display:block;
+      float:left;
+      margin-right:20px;
+    }
+    input{
+      @include myinputs;
+      width:300px;
+    }
+    textarea{
+      @include myinputs;
+      width:400px;
+      height:180px;
+      margin-left:5px;
+    }
+  }
+  .button{
+    text-align:right;
+    margin-right:20%;
+    margin-top:10px;
+  }
+
 }

@@ -15,4 +15,5 @@ class ApplicationController < ActionController::Base
         redirect_to(log_in_path, :notice => "Пожалуйста авторизируйтесь")
       end
     end
+    
 end

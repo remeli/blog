@@ -18,6 +18,14 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   validates :title, :description, :presence => true
   validates :title, :uniqueness => true, :length =>{ :within => 2..25 } 
+  
+  def button_value
+    if new_record?
+      "Добавить пост"
+    else
+      "Редактировать пост"
+    end
+  end
 
 end
 
