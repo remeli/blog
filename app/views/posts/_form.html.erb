@@ -1,4 +1,5 @@
 <%= form_for @post do |f| %>
+  <%= errors_for_object(@post) %>
   <div class="field">
   	<%= f.label :title, 'Заголовок:' %>
   	<%= f.text_field :title %>
