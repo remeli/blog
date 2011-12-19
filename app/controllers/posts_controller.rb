@@ -2,7 +2,6 @@
 class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
-  before_filter :load_category, :only => [:new, :edit]
   
   respond_to :html
   
@@ -51,10 +50,5 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
   end
-  
-  private
-    def load_category
-      @categories = Category.all
-    end
 
 end

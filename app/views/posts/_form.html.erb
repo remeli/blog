@@ -1,6 +1,10 @@
 <%= form_for @post do |f| %>
   <%= errors_for_object(@post) %>
   <div class="field">
+    <%= f.label :category_id, 'Категория:' %>
+    <%= collection_select(:post, :category_id, Category.ascname, :id, :name) %>
+  </div>
+  <div class="field">
   	<%= f.label :title, 'Заголовок:' %>
   	<%= f.text_field :title %>
   </div>
