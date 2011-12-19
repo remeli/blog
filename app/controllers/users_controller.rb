@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Вы успешно зарегистрировались"
+      session[:user_id] = @user.id
       respond_with(@user, :location => root_path)
     else
       render 'new'

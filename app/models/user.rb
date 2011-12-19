@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   #  created_at    :datetime
   #  updated_at    :datetime
   #
+
   
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation
@@ -35,6 +36,14 @@ class User < ActiveRecord::Base
       user
     else
       nil
+    end
+  end
+  
+  def self.verify_access(user)
+    if user.admin == true
+      true
+    else
+      false
     end
   end
   

@@ -32,6 +32,7 @@ GEM
     annotate (2.4.1.beta1)
     ansi (1.4.1)
     arel (2.2.1)
+    awesome_print (1.0.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coffee-rails (3.1.1)
@@ -114,6 +115,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.4.1.beta1)
+  awesome_print
   bcrypt-ruby
   coffee-rails (~> 3.1.1)
   jquery-rails
