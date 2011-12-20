@@ -9,4 +9,8 @@ module ApplicationHelper
     true if User.verify_access(user)
   end
   
+  def user_has?
+    true if User.find_by_id(session[:user_id])
+  end
+  
 end
