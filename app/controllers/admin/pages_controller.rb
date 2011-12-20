@@ -6,7 +6,7 @@ class Admin::PagesController < ApplicationController
   respond_to :html
   
   def index
-    
+
   end
   
   def new
