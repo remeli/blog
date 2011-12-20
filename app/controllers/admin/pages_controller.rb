@@ -21,7 +21,13 @@ class Admin::PagesController < ApplicationController
   end
   
   def create
-    @page = Page.find(params[:id])
+    @page = Page.new(params[:page])
+    if @page.save
+      flash[:notice] = 'Страница успешно добавлена'
+      respond_with(@page, :location => admin_pages_path)
+    else
+      render 'new'
+    end
   end
   
   def update

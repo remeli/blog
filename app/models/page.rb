@@ -19,4 +19,12 @@ class Page < ActiveRecord::Base
   
   default_scope order("name ASC")
   
+  def button_value
+    if new_record?
+      "Добавить страницу"
+    else
+      "Редактировать страницу"
+    end
+  end
+  
 end
