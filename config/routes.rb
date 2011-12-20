@@ -2,14 +2,14 @@ Blog::Application.routes.draw do
 
   resources :comments
   resources :pages
-  resources :categories
+  resources :categories, :only => [:index, :show]
 
   match "sign_up" => "users#new", :as => "sign_up"
   match "log_in" => "sessions#new", :as => "log_in"
   match "log_out" => "sessions#destroy", :as => "log_out"
   resources :sessions
   resources :users
-  resources :posts
+  resources :posts, :only => [:index, :show, :new, :create]
   
   # match '/:permalink', :to => "pages#show"
   match 'static/:permalink', :to => "pages#show"
@@ -18,6 +18,9 @@ Blog::Application.routes.draw do
   match "admin" => "admin#index", :as => "admin"
   namespace :admin do
     resources :categories
+    resources :posts, :except => [:new, :create]
+    resources :users
+    resources :pages
   end
 
   # The priority is based upon order of creation:

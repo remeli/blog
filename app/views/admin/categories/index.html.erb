@@ -1,15 +1,19 @@
-<% flash.each do |name, msg| %>
-  <p id="flash"><%= msg %></p>
-<% end %>
-<ul>
-  <% @categories.each do |c| %>
-    <li>
-      <%= link_to c.name, c %>
-      <div>
-        <%= link_to "Показать", c %>
-        <%= link_to "Редактировать", edit_admin_category_path(c) %>
-        <%= link_to "Удалить", admin_category_path(c), :method => :delete, :confirm => "Вы уверены?" %>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="flash">
+  <% flash.each do |name, msg| %>
+    <p id="flash"><%= msg %></p>
+  <% end %>  
+</div>
+<div class="show_admin">
+  <%= link_to "Создать категорию", new_admin_category_path, :class => "new_button" %>
+  <ul>
+    <% @categories.each do |c| %>
+      <li>
+        <%= c.name %>
+        <span class="admin_actions">
+          <%= link_to edit_img, edit_admin_category_path(c) %>
+          <%= link_to delete_img, admin_category_path(c), :method => :delete, :confirm => "Вы уверены?" %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>
