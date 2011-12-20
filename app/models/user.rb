@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   
   attr_accessor :password
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :admin
   before_save :encrypt_password
   has_many :comments, :dependent => :destroy
   
