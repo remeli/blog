@@ -1,26 +1,29 @@
-<%= form_for [:admin, @user] do |f| %>
-  <% if @user.errors.any? %>
-    <ul class="errors">
-      <% @user.errors.each do |key, value| %>
-        <li>
-          <%= value %>
-        </li>
-      <% end %>      
-    </ul>
+<div id="add-post-from-user">
+  <h1>Редактировать пользователя:</h1>
+  <%= form_for [:admin, @user] do |f| %>
+    <% if @user.errors.any? %>
+      <ul class="errors">
+        <% @user.errors.each do |key, value| %>
+          <li>
+            <%= value %>
+          </li>
+        <% end %>      
+      </ul>
+    <% end %>
+    <div class="field">
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "Пароль:" %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Повторите пароль:" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="button">
+      <%= f.submit "Обновить" %>
+    </div>
   <% end %>
-  <p>
-    <%= f.label :email, "Email:" %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password, "Пароль:" %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Повторите пароль:" %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button">
-    <%= f.submit "Обновить" %>
-  </p>
-<% end %>
+</div>
