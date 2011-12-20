@@ -1,10 +1,5 @@
-<p>Все статьи:</p><br />
+<h1>Все статьи:</h1>
 <% @posts.each do |post| %>
-	<br /><p><b><%= post.title %></b></p><br />
-	<%= post.description %><br />
-	<%= link_to "view", post_path(post) %>
-	<%= link_to "edit", edit_post_path(post) %>
-	<%= link_to "delete", post_path(post), :confirm => 'Вы уверены?', 
-																				 :method => :delete %>
+	<h1><%= link_to post.title, post %></h1>
+	<%= raw(post.description) %><br />
 <% end %>
-<br /><p><%= link_to "new post", new_post_path %></p>

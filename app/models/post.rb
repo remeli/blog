@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   
   # validates:
   validates :title, :presence => { :message => 'Название не может быть пустым' }
-  validates :title, :length => { :within => 2..25, :message => 'Название короткое' } 
+  validates :title, :length => { :minimum => 2, :message => 'Название короткое' } 
   validates :description, :presence => { :message => 'Пост не может быть пустым'  }
   validates :category_id, :presence => { :message => 'Категория не выбрана' }
   
@@ -31,6 +31,8 @@ class Post < ActiveRecord::Base
       "Редактировать пост"
     end
   end
+  
+  default_scope order('created_at DESC')
 
 end
 
