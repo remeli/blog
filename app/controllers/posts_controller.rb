@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   respond_to :html
   
   def index
-    @posts = Post.order('created_at DESC').page(params[:page]).per(2)
+    @posts = Post.page(params[:page]).per(5)
     respond_with @posts
   end
     
