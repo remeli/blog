@@ -23,24 +23,23 @@
    
 }
 
-#post {
+#posts {
   font: Helvetica,verdana, sans-serif,arial;
-  //margin: 3px;
-  //padding: 3px;
+  
   #post_index_title {
     font-weight: bold;
     font-size: 16px;
     //margin-top: 5px;
-    padding-top: 5px;
+    margin-top:20px;
+    margin-bottom:5px;
   }
-  
   #post_index_description {
   border-bottom: 2px solid #48758f;
-  padding-bottom:5px;
- 
+  padding-bottom:10px;
   }
   
   #pagination {
+    margin-top:20px;
   }
   
 }
