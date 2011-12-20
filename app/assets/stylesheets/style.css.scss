@@ -340,6 +340,11 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
       display:block;
       font-size:20px;
       margin-bottom:20px;
+      background:#7E7E7E;
+      width:200px;
+      @include radius;
+      padding:5px;
+      color:#fff;
     }
     ul li{
       @include radius;
@@ -350,6 +355,15 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
       .admin_actions{
         float:right;
         margin-right:20px;
+      }
+      .details{
+        font-size:11px;
+        margin-top:10px;
+        .created_at{
+          font-size:10px;
+          margin-top:10px;
+          color:#ccc;
+        }
       }
     }
   } 

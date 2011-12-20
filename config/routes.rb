@@ -9,7 +9,7 @@ Blog::Application.routes.draw do
   match "log_out" => "sessions#destroy", :as => "log_out"
   resources :sessions
   resources :users
-  resources :posts
+  resources :posts, :only => [:index, :show, :new, :create]
   
   # match '/:permalink', :to => "pages#show"
   match 'static/:permalink', :to => "pages#show"
@@ -18,7 +18,7 @@ Blog::Application.routes.draw do
   match "admin" => "admin#index", :as => "admin"
   namespace :admin do
     resources :categories
-    resources :posts
+    resources :posts, :except => [:new, :create]
     resources :users
     resources :pages
   end

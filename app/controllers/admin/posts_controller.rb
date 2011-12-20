@@ -1,15 +1,15 @@
 #encoding:UTF-8
-class PostsController < ApplicationController
+class Admin::PostsController < ApplicationController
   
-  before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
-
+  layout 'admin'  
   respond_to :html
+  before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
-    @posts = Post.order('created_at DESC').page(params[:page]).per(2)
+    @posts = Post.all
     respond_with @posts
   end
-    
+  
   def show
     @comment = Comment.new
     @post = Post.find(params[:id])
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     if @post.save
       flash[:notice] = 'Пост успешно добавлен'
-      respond_with(@post, :location => root_path)
+      respond_with(@post, :location => admin_posts_path)
     else
       render 'new'
     end    
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       flash[:notice] = 'Пост успешно обновлен'
-      respond_with(@post, :location => @post)
+      respond_with(@post, :location => admin_posts_path)
     else
       render 'edit'
     end    
@@ -49,6 +49,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = "Пост успешно удален"
+    redirect_to admin_posts_path
   end
 
 end
