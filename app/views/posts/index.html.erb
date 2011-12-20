@@ -1,5 +1,16 @@
-<h1>Все статьи:</h1>
-<% @posts.each do |post| %>
-	<h1><%= link_to post.title, post %></h1>
-	<%= raw(post.description) %><br />
-<% end %>
+<div id="post">
+  <p>Все статьи:</p>
+  <%  @posts.each do |post| %>
+  <div id="post_index_title">
+	  <%= link_to(post.title, post) %><br />
+	</div>
+	
+	<div id="post_index_description">
+	  <%= truncate(strip_tags(post.description), :length =>150)%>
+	  <%= link_to 'Далее', post %><br />
+  </div>
+  <% end %>
+  
+  <div id="pagination"><%= paginate @posts %>
+  </div>
+</div>

@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
+  default_scope order('created_at DESC')
   
   # validates:
   validates :title, :presence => { :message => 'Название не может быть пустым' }
@@ -33,6 +34,7 @@ class Post < ActiveRecord::Base
   end
   
   default_scope order('created_at DESC')
+
 
 end
 
