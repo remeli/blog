@@ -4,6 +4,7 @@ class Admin::PostsController < ApplicationController
   layout 'admin'  
   respond_to :html
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :access    
   
   def index
     @posts = Post.all
