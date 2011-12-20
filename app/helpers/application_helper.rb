@@ -21,8 +21,8 @@ module ApplicationHelper
     image_tag "delete.gif"
   end
   
-  def trunc(object)
-    truncate(object, :length => 100)
+  def trunc(object, length = 100)
+    raw(truncate(object, :length => length ))
   end
   
   def to_date(object)

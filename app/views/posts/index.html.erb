@@ -6,8 +6,8 @@
 	</div>
 	
 	<div id="post_index_description">
-	  <%= truncate(strip_tags(post.description), :length =>150)%>
-	  <%= link_to 'Далее', post %><br />
+	  <%= trunc(post.description, 150) %>
+	  <%= link_to 'Далее', post %>
   </div>
   <% end %>
   

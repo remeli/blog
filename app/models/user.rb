@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   
   attr_accessor :password
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :admin
   before_save :encrypt_password
   has_many :comments, :dependent => :destroy
   
@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
   validates :email, :presence => {:message => "Пустой e-mail"}
   validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
+  
+  default_scope order("created_at DESC")
   
   def encrypt_password
     if password.present?

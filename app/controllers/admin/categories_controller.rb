@@ -3,7 +3,7 @@ class Admin::CategoriesController < ApplicationController
 
   layout 'admin'  
   respond_to :html
-  before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :access  
   
   def index
     @categories = Category.all
@@ -25,7 +25,6 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
-  
   def edit
     @category = Category.find(params[:id])
     respond_with(@category)
