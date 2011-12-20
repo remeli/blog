@@ -1,8 +1,8 @@
-<%= form_for @category do |f| %>
+<%= form_for [:admin, @category] do |f| %>
   <%= errors_for_object(@category) %>
   <div class="field">
     <%= f.label :name, 'Название:' %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :value => @category.name %>
   </div>
   <div class="button">
 	  <%= f.submit @category.button_value %>

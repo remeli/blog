@@ -12,5 +12,13 @@ module ApplicationHelper
   def user_has?
     true if User.find_by_id(session[:user_id])
   end
+
+  # admin:
+  def edit_img
+    image_tag "edit.png"
+  end
   
+  def delete_img
+    image_tag "delete.gif"
+  end
 end

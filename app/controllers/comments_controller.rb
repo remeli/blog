@@ -26,3 +26,5 @@ class CommentsController < ApplicationController
   end
   
 end
+
+# todo сделать rest в роутах

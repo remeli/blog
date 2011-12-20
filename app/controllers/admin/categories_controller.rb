@@ -19,7 +19,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     if @category.save
       flash[:notice] = "Категория успешно добавлена"
-      respond_with(@category, :location => root_path)
+      respond_with(@category, :location => admin_categories_path)
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
       flash[:notice] = "Категория успешно обновлена"
-      respond_with(@category, :location => @category)
+      respond_with(@category, :location => admin_categories_path)
     else
       render 'edit'
     end

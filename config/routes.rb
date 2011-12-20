@@ -2,7 +2,7 @@ Blog::Application.routes.draw do
 
   resources :comments
   resources :pages
-  resources :categories
+  resources :categories, :only => [:index, :show]
 
   match "sign_up" => "users#new", :as => "sign_up"
   match "log_in" => "sessions#new", :as => "log_in"

@@ -304,6 +304,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     height:80px;
     padding-top:30px;
   }
+  .flash{
+    text-align:center;
+  }
   h1{
     font:$h1;
     text-align:center;
@@ -330,5 +333,25 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
       margin-right:5px;
     }
   }
+  .show_admin{
+    width:900px;
+    margin:0 auto;
+    .new_button{
+      display:block;
+      font-size:20px;
+      margin-bottom:20px;
+    }
+    ul li{
+      @include radius;
+      border:1px solid #ccc;
+      padding:7px;
+      margin-bottom:10px;
+      font-size:20px;
+      .admin_actions{
+        float:right;
+        margin-right:20px;
+      }
+    }
+  } 
   // end rules
 }
