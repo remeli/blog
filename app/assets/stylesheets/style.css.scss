@@ -298,6 +298,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   margin:0 auto;
   border-right:1px solid #ccc;
   border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
   font:$main-font;
   #header{
     height:80px;
@@ -309,13 +310,25 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   }
   a{
     text-decoration:none;
-    color:#ccc;
+    color:#484848;
     &:hover{
-      color:#eee;
+      color:#767676;
     }
   }
   #content{
     padding:10px;
+    ul{
+      width:800px;
+      margin:0 auto;
+    }
+    ul li{
+      margin-bottom:10px;
+    }
+    ul li img{
+      width:20px;
+      height:20px;
+      margin-right:5px;
+    }
   }
   // end rules
 }

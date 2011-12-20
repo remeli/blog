@@ -18,6 +18,9 @@ Blog::Application.routes.draw do
   match "admin" => "admin#index", :as => "admin"
   namespace :admin do
     resources :categories
+    resources :posts
+    resources :users
+    resources :pages
   end
 
   # The priority is based upon order of creation:
