@@ -6,7 +6,7 @@ class Admin::PagesController < ApplicationController
   respond_to :html
   
   def index
-    @pages = User.all
+    @pages = Page.all
     respond_with(@pages)
   end
   
@@ -17,7 +17,7 @@ class Admin::PagesController < ApplicationController
   
   def edit
     @page = Page.find(params[:id])
-    repond_with(@page)
+    respond_with(@page)
   end
   
   def create
