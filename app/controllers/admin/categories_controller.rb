@@ -25,7 +25,6 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
-  
   def edit
     @category = Category.find(params[:id])
     respond_with(@category)
