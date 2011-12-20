@@ -13,8 +13,8 @@
           <%= link_to delete_img, admin_post_path(p), :method => :delete, :confirm => "Вы уверены?" %>
         </span>
         <div class="details">
-          <p>Категория: <%= p.category.name %></p>
-          <p>Текст:<%= p.description %></p>
+          <p><b>Категория:</b> <%= p.category.name %></p>
+          <p><b>Текст:</b><%= trunc(p.description) %></p>
           <div class="created_at">
             <%= to_date(p) %>
           </div>
