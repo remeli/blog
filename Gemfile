@@ -32,6 +32,8 @@ end
 
 group :development do
   gem 'rails-dev-tweaks', '~> 0.5.2'
+  gem 'awesome_print'
 end
 
 gem "kaminari"
+

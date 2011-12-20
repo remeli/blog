@@ -2,7 +2,7 @@
 class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
-  
+
   respond_to :html
   
   def index
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
     
   def show
+    @comment = Comment.new
     @post = Post.find(params[:id])
     respond_with @post
 
@@ -33,7 +34,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     if @post.save
-      flash[:notice] = "Пост успешно добавлен"
+      flash[:notice] = 'Пост успешно добавлен'
       respond_with(@post, :location => root_path)
     else
       render 'new'
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
-      flash[:notice] = "Пост успешно обновлен"
+      flash[:notice] = 'Пост успешно обновлен'
       respond_with(@post, :location => @post)
     else
       render 'edit'

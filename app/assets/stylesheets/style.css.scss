@@ -20,8 +20,23 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   -o-border-radius:5px;
 }
 
+@mixin myinputs{
+  border:1px solid #ccc;
+  height:20px;
+  font-size:16px;
+  padding:4px;
+  color:#8F8F8F;
+}
+
 // MAIN RULES:
 #wrapper{
+  a{
+    color:#8F8F8F;
+    text-decoration:none; 
+    &:hover{
+      color:#767676;
+    }
+  }
   // start rules
   margin:auto;
   width:960px;
@@ -48,6 +63,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
  #header{
    height:80px;
    border-bottom:1px solid $border-color;
+   background:#eee;
    padding-top: 20px;
    h1{
     font: $h1;
@@ -86,6 +102,20 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
        .email{
          padding:10px 0px 10px 10px;
        }
+       .add-post{
+          margin:5px 0px 10px 7px;
+          a{
+            padding:5px;
+            background:#B5D0AD;
+            color:#fff;
+            &:hover{
+              background:#BDDBBF;
+            }
+          }
+       }
+       .admin-link{
+         margin-left:10px;
+       }
        .submit{
          padding:5px 0px 10px 10px;
        }
@@ -118,6 +148,22 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          margin-top:5px;
        }
      }
+
+		#categories{
+			margin-top: 20px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			padding-bottom:3px;
+			.categories_title{
+				background:#7E7C80;
+				color:$white;
+				padding:5px;
+				margin-bottom:3px;
+			}
+			.category_link{
+				padding:3px;
+			}
+		}
      
    }
    
@@ -183,5 +229,93 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   padding:3px;
   text-align:center;
   margin:10px 0px 20px 0px;
+  // end rules
+}
+
+// add post form
+#add-post-from-user{
+  padding:0px 10px 0px 10px;
+  color:#8F8F8F;
+  h1{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .field{
+    margin-top:20px;
+    font-size:18px;
+    label{
+      display:block;
+      margin-bottom:5px;
+      margin-right:20px;
+    }
+    input{
+      @include myinputs;
+      width:300px;
+    }
+    textarea{
+      @include myinputs;
+      width:400px;
+      height:180px;
+    }
+  }
+  .button{
+    margin-right:20%;
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+
+}
+
+// errors:
+#errorExplanation{
+  @include radius;
+  p{
+    font-size:20px;
+    margin:5px;
+  }
+  ul{
+    margin-left:20px;
+  }
+  ul li{
+    list-style-type:square;
+    margin-bottom:5px;
+  }
+  border:1px solid #7D1D24;
+  padding:10px;
+  font-size:11px;
+  background:#F5F5F5;
+  color:#7D1431;
+}
+
+#page_show{
+	
+}
+
+// admin:
+#admin{
+  // begin rules:
+  width:1000px;
+  margin:0 auto;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  font:$main-font;
+  #header{
+    height:80px;
+    padding-top:30px;
+  }
+  h1{
+    font:$h1;
+    text-align:center;
+  }
+  a{
+    text-decoration:none;
+    color:#ccc;
+    &:hover{
+      color:#eee;
+    }
+  }
+  #content{
+    padding:10px;
+  }
   // end rules
 }

@@ -11,10 +11,12 @@ class User < ActiveRecord::Base
   #  created_at    :datetime
   #  updated_at    :datetime
   #
+
   
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation
   before_save :encrypt_password
+  has_many :comments, :dependent => :destroy
   
   validates :password, :confirmation => {:message => "Пароли не совпадают"}
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
@@ -34,6 +36,14 @@ class User < ActiveRecord::Base
       user
     else
       nil
+    end
+  end
+  
+  def self.verify_access(user)
+    if user.admin == true
+      true
+    else
+      false
     end
   end
   
