@@ -3,7 +3,7 @@
     <%= @post.title %><br/>
   </div>
   <div id="post_show_description">
-    <%= @post.description %>
+    <%= raw(@post.description) %>
   </div>  
 </div>
 <%= render :partial => "shared/comments" %><br /><br />
