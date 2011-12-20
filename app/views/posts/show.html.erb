@@ -1,4 +1,16 @@
-<p><h1><%= @post.title %></h1></p><br />
-<%= @post.description %><br /><br />
+
+<div id="post_show">
+  
+  <div id="post_show_title">
+    <%= @post.title %><br/>
+  </div>
+  
+  <div id="post_show_description">
+    <%= @post.description %>
+  </div>
+  
+</div>
+
 <%= render :partial => "shared/comments" %><br /><br />
 <%= render :partial => "shared/comment_form" %>
+

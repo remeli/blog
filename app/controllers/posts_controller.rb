@@ -6,14 +6,17 @@ class PostsController < ApplicationController
   respond_to :html
   
   def index
-    @posts = Post.all
+
+    @posts = Post.order('created_at DESC').page(params[:page]).per(2)
     respond_with @posts
+
   end
-  
+    
   def show
     @comment = Comment.new
     @post = Post.find(params[:id])
     respond_with @post
+
   end
   
   def new
@@ -22,8 +25,10 @@ class PostsController < ApplicationController
   end
   
   def edit
+
     @post = Post.find(params[:id])
     respond_with @post
+
   end
   
   def create
