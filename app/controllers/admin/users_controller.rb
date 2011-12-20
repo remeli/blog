@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
   before_filter :access
   
   def index
-    
+
   end
   
 end

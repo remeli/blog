@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => {:message => "Пустой e-mail"}
   validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
   
+  default_scope order("created_at DESC")
+  
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
