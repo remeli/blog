@@ -1,15 +1,7 @@
 <div id="add-post-from-user">
   <h1>Редактировать пользователя:</h1>
   <%= form_for [:admin, @user] do |f| %>
-    <% if @user.errors.any? %>
-      <ul class="errors">
-        <% @user.errors.each do |key, value| %>
-          <li>
-            <%= value %>
-          </li>
-        <% end %>      
-      </ul>
-    <% end %>
+    <%= errors_for_object(@user) %>
     <div class="field">
       <%= f.label :email, "Email:" %>
       <%= f.text_field :email %>
