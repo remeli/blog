@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 class StaticController < ApplicationController
   
   respond_to :html
@@ -6,5 +8,5 @@ class StaticController < ApplicationController
     @posts = Post.rootposts
     respond_with @posts
   end
-
+  
 end

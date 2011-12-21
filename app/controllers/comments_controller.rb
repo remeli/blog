@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
     
     @comment = Comment.new(params[:comment])
     if @comment.save
-      redirect_to :back
+      redirect_to :back, :notice =>"Комментарий добавлен"
     else
-      render :action => 'new'
+      redirect_to :back, :alert =>"Ошибка: текст комментария либо пуст, либо слишком длинный!" 
     end
   end
   
