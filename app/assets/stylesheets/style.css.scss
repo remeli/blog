@@ -70,6 +70,30 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
    }
  }
  
+ // main menu
+ #mainmenu{
+   ul{
+     width:100%;
+     background:#E3E3E3;
+     height:28px;
+     font-family:Helvetica;
+     font-size:14px;
+     margin-bottom:10px;
+     li{
+       float:left;
+       a{
+         display:block;
+         padding:8px 7px 5px 7px;
+         background:#E3E3E3;
+         color:#5A5A5A;
+         &:hover{
+           background:#C7C7C7;
+         }
+       }
+     }
+   }
+ }
+ 
  // main content:
  #maincontent{
    font:$main-font;
