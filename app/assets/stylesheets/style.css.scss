@@ -164,7 +164,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 				margin-bottom:3px;
 			}
 			.category_link{
-				padding:10px;
+				padding:3px 10px 3px 10px;
 			}
 		}
      
@@ -497,5 +497,29 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 	p{
 		text-align: justify;
 		text-indent: 30px;
+	}
+}
+
+#post_show{
+	margin-bottom: 20px;
+	padding: 10px;
+	.post_show_description{
+		p{
+			text-align: justify;
+			text-indent: 30px;
+		}
+		line-height: 24px;
+	}
+	.post_show_title{
+		font-size: 26px;
+		font-weight: bold;
+		color: #7E7C80;
+		margin-bottom: 15px;		
+	}
+	.show_post_l{
+		padding-top: 20px;
+		float: right;
+		@include radius;
+		font-size: 12px;
 	}
 }
