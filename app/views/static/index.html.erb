@@ -1,0 +1,16 @@
+<div id="root_page">
+  <div id="last-six-posts">
+    <ul>
+      <% @posts.each do |p| %>
+        <li>
+          <div class="post">
+            <h1 class="title"><%= link_to p.title, p %></h1>
+            <div class="content">
+              <%= trunc(p.description, 200) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -434,3 +434,36 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     }
   }
 }
+
+// root page:
+#root_page{
+  #last-six-posts{
+    margin-bottom:10px;
+    ul li{
+      float:left;
+      display:block;
+      width:30%;
+      margin-bottom:20px;
+      border:1px solid #EBEBEB;
+      padding:5px;
+      margin-right:10px;
+      height:150px;
+      a{
+        color:#8CBF74;
+        &:hover{
+          color:#A1D36F;
+        }
+      }
+      .title{
+        font-size:14px;
+        margin-bottom:10px;
+      }
+      .content{
+        font:$small-font;
+      }
+      &:hover{
+        border:1px solid #D4D4D4;
+      }
+    }
+  }
+}
