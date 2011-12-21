@@ -1,6 +1,6 @@
 <div id="comment_form">
 	<% if user_has? %>
-	  <%= form_for @comment do |f| %>
+	  <%= form_for [@post, @comment] do |f| %>
 			<% if alert %>
 				<p id="alert"><%= alert %></p>
 			<% end %>
