@@ -15,7 +15,6 @@ class Comment < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :post
-  validates :comment_text, :presence => true, 
-                           :length =>{ :within => 2..200 }
+  validates :comment_text, :presence => true, :length => {:maximum => 200}
 end
 
