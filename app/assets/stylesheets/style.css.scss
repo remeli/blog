@@ -92,6 +92,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
      // user info:
      #userinfo{
        font-size:11px;
+       @include radius;
        h4{
          background:#7E7C80;
          color:$white;
@@ -150,7 +151,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
      }
 
 		#categories{
+		  @include radius;
 			margin-top: 20px;
+			font:$small-font;
 			border: 1px solid #ccc;
 			margin-bottom: 20px;
 			padding-bottom:3px;
@@ -161,7 +164,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 				margin-bottom:3px;
 			}
 			.category_link{
-				padding:3px;
+				padding:10px;
 			}
 		}
      
@@ -438,7 +441,6 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 // root page:
 #root_page{
   #last-six-posts{
-    margin-bottom:10px;
     ul li{
       float:left;
       display:block;
@@ -448,6 +450,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
       padding:5px;
       margin-right:10px;
       height:150px;
+      @include radius;
       a{
         color:#8CBF74;
         &:hover{
