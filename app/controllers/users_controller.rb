@@ -1,17 +1,20 @@
 #encoding:UTF-8
 class UsersController < ApplicationController
 
-  before_filter :ver_in_system
+  before_filter :ver_in_system, :only => [:new, :create]
   respond_to :html
   layout 'signup'
   
   def index
-    render :layout => 'application'
+    @users = User.page(params[:page]).per(20)
     @title = "Все пользователи"
+    render :layout => 'application'
   end
   
   def show
-    UsersController.layout 'application'
+    @user = User.find(params[:id])
+    @title = "Блог пользователя: #{@user.email}"
+    render :layout => 'application'
   end
   
   def new
@@ -30,4 +33,5 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
 end
