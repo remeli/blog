@@ -6,7 +6,7 @@ class Admin::PostsController < ApplicationController
   before_filter :access    
   
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(7)
     respond_with @posts
   end
   

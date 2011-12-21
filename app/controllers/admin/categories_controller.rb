@@ -6,7 +6,7 @@ class Admin::CategoriesController < ApplicationController
   before_filter :access  
   
   def index
-    @categories = Category.all
+    @categories = Category.page(params[:page]).per(10)
     respond_with @categories
   end
   

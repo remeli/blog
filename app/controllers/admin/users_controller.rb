@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   respond_to :html
   
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
     respond_with @users
   end
   

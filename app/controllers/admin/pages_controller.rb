@@ -6,7 +6,7 @@ class Admin::PagesController < ApplicationController
   respond_to :html
   
   def index
-    @pages = Page.all
+    @pages = Page.page(params[:page]).per(7)
     respond_with(@pages)
   end
   
