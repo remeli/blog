@@ -101,11 +101,13 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          padding:10px 0px 10px 10px;
        }
        .add-post{
+         
           margin:5px 0px 10px 7px;
           a{
             padding:5px;
             background:#B5D0AD;
             color:#fff;
+            @include radius;
             &:hover{
               background:#BDDBBF;
             }
