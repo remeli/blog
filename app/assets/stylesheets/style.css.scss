@@ -296,20 +296,18 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   // begin rules:
   width:1000px;
   margin:0 auto;
-  border-right:1px solid #ccc;
-  border-left:1px solid #ccc;
-  border-bottom:1px solid #ccc;
   font:$main-font;
   #header{
-    height:80px;
+    height:50px;
     padding-top:30px;
   }
   .flash{
     text-align:center;
   }
   h1{
-    font:$h1;
-    text-align:center;
+    font-size:20px;
+    text-align:left;
+    padding-left:50px;
   }
   a{
     text-decoration:none;
@@ -323,14 +321,35 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     ul{
       width:800px;
       margin:0 auto;
+      margin-left:250px;
     }
     ul li{
       margin-bottom:10px;
+      margin-right:30px;
+      display:block;
+      background:#6B6B6B;
+      float:left;
+      padding:5px 10px 5px 5px;
+      @include radius;
+      &:hover{
+        background:#9E9E9E;
+      }
+      a{
+        color:#fff;
+      }
     }
     ul li img{
       width:20px;
       height:20px;
       margin-right:5px;
+    }
+  }
+  #admin_index_page{
+    margin-top:200px;
+    h1{
+      font-size:80px;
+      color:#ccc;
+      text-align:center;
     }
   }
   .show_admin{
@@ -372,4 +391,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     }
   } 
   // end rules
+}
+
+// clear
+.clear{
+  clear:both;
 }
