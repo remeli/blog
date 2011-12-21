@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   #
 
   
+  
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation, :admin
   before_save :encrypt_password
@@ -22,7 +23,10 @@ class User < ActiveRecord::Base
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
   validates :email, :presence => {:message => "Пустой e-mail"}
   validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
-  
+
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, :format => { :with => email_regex, :message => "Неправильный формат email"}
+
   default_scope order("created_at DESC")
   
   def encrypt_password
@@ -48,6 +52,5 @@ class User < ActiveRecord::Base
       false
     end
   end
-  
-  # TODO: сделать валидацию email(формат), длину пароля
+
 end
