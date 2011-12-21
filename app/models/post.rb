@@ -33,8 +33,5 @@ class Post < ActiveRecord::Base
     end
   end
   
-  default_scope order('created_at DESC')
-
-
 end
 

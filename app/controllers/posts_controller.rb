@@ -2,7 +2,6 @@
 class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
-
   respond_to :html
   
   def index

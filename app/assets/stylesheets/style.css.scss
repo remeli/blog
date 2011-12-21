@@ -287,8 +287,11 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   color:#7D1431;
 }
 
-#page_show{
-	
+#category_show{
+	.category_title{
+		color:#6892C6;
+		font-size: 20px;
+	}
 }
 
 // admin:

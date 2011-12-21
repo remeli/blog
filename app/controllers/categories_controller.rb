@@ -1,6 +1,5 @@
 #encoding: UTF-8
 class CategoriesController < ApplicationController
-  
   respond_to :html
   
   def index
@@ -10,9 +9,8 @@ class CategoriesController < ApplicationController
   
   def show
     @category = Category.find(params[:id])
-    respond_with @category
-    # TODO: переделать
-    @posts = @category.posts
+    @posts = @category.posts.page(params[:page]).per(5)
+    respond_with @categories
   end
   
 end

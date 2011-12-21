@@ -1,1 +1,9 @@
-<p>Все посты категории <b><%= @category.name %></b>:</p>
+<div id="category_show">
+	<p>
+		Все посты категории <br />
+		<div class="category_title">
+			<%= @category.name %>:
+		</div>
+	</p>	
+	<%= render :template => 'posts/index' %>
+</div>
