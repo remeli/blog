@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def destroy
     find_post
     @post.destroy
-    flash[:notice] = "Запись успешно обновлена"
+    flash[:notice] = "Запись успешно удалена"
     redirect_to current_user
   end
   
