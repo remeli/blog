@@ -9,6 +9,11 @@
 <body>
   <div id="admin">
     <div id="header">
+      <div id="adminmenu">
+        <p><%= current_user.email %></p>
+        <p><%= link_to "Выйти", log_out_path, :confirm => "Вы действительно хотите выйти?" %></p>
+        <p><%= link_to "На сайт", root_path %></p>
+      </div>
       <h1><%= link_to "Админка", admin_path %></h1>
     </div>
     <%= yield %>
