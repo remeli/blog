@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
   
   def new
-    @post = @user.post.new
+    @post = @user.posts.new
     @title = "Добавление поста"
     respond_with @post
   end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = @user.post.new(params[:post])
+    @post = @user.posts.new(params[:post])
     if @post.save
       flash[:notice] = 'Пост успешно добавлен'
       respond_with(@post, :location => root_path)
