@@ -9,7 +9,7 @@ Blog::Application.routes.draw do
   resources :sessions
   resources :users, :only => [:new, :create]
   resources :posts, :only => [:index, :show, :new, :create]
-  resources :categories, :only => [:index, :show]
+  resources :categories, :only => :show
   resources :pages, :only => [:index, :show]
   resources :comments
   
