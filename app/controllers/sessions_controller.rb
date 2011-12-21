@@ -1,6 +1,7 @@
 # encoding:UTF-8
 class SessionsController < ApplicationController
   
+  before_filter :ver_in_system
   respond_to :html
   layout 'signup'
   

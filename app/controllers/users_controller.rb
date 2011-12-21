@@ -1,9 +1,10 @@
 #encoding:UTF-8
 class UsersController < ApplicationController
-  
+
+  before_filter :ver_in_system
   respond_to :html
   layout 'signup'
-  
+
   def new
     @user = User.new
     @title = "Регистрация"
