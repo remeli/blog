@@ -1,10 +1,20 @@
-<%= link_to "new page", new_page_path %>
-<% @pages.each do |page| %>
-	<%= page.name %><br />
-	<%= page.permalink %><br />
-	<%= page.content %><br />
-	<%= link_to "show", page_path(page) %>
-	<%= link_to "edit", edit_page_path(page) %>
-	<%= link_to "destroy", page_path(page), :confirm => 'Вы уверены?', 
-																					:method => :delete %>
-<% end %>
+<div class="static_pages_index">
+  <ul>
+    <% @pages.each do |p| %>
+      <li>
+        <%= p.name %>
+        <div class="details">          
+          <p><b>Текст:</b><%= trunc(p.content) %></p>
+        	<div class="created_at">
+          	<%= to_date(p) %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div id="pagination">
+    <%= paginate(@pages) %>
+  </div>
+  <div class="clear"> 
+  </div>
+</div>
