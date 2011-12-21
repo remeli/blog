@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :admin
   before_save :encrypt_password
   has_many :comments, :dependent => :destroy
+  has_many :posts
   
   validates :password, :confirmation => {:message => "Пароли не совпадают"}
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
