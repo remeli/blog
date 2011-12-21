@@ -3,13 +3,12 @@
   <div id="post_index_title">
 	  <%= link_to(post.title, post) %><br />
 	</div>
-	
 	<div id="post_index_description">
 	  <%= trunc(post.description, 350) %>
 	  <%= link_to 'Далее', post %>
   </div>
   <% end %>
-  
-  <div id="pagination"><%= paginate @posts %>
+  <div id="pagination">
+		<%= paginate @posts %>
   </div>
 </div>
