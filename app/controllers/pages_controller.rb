@@ -3,7 +3,7 @@
 class PagesController < ApplicationController
   
   def index
-    @pages = Page.all
+    @pages = Page.page(params[:page]).per(7)
   end
   
   def show
