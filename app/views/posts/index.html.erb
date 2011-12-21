@@ -1,10 +1,15 @@
-<p>Все статьи:</p><br />
-<% @posts.each do |post| %>
-	<br /><p><b><%= post.title %></b></p><br />
-	<%= post.description %><br />
-	<%= link_to "view", post_path(post) %>
-	<%= link_to "edit", edit_post_path(post) %>
-	<%= link_to "delete", post_path(post), :confirm => 'Вы уверены?', 
-																				 :method => :delete %>
-<% end %>
-<br /><p><%= link_to "new post", new_post_path %></p>
+<div id="posts">
+  <%  @posts.each do |post| %>
+  <div id="post_index_title">
+	  <%= link_to(post.title, post) %><br />
+	</div>
+	
+	<div id="post_index_description">
+	  <%= trunc(post.description, 350) %>
+	  <%= link_to 'Далее', post %>
+  </div>
+  <% end %>
+  
+  <div id="pagination"><%= paginate @posts %>
+  </div>
+</div>

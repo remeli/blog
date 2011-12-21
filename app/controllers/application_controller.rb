@@ -18,9 +18,14 @@ class ApplicationController < ActionController::Base
     
     # the method verifies the user is an admin or not
     def access
-      unless User.verify_access(current_user)
-        redirect_to(root_path, :notice => "Действия запрещены")
+      if current_user
+        unless User.verify_access(current_user)
+          redirect_to(root_path, :notice => "Действия запрещены")
+        end        
+      else
+        redirect_to(log_in_path, :notice => "Пожалуйста авторизируйтесь")
       end
+
     end
     
 end

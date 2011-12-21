@@ -1,6 +1,6 @@
 <p>Комментарии (<%= @post.comments.count %>):</p><br />
-<%  @post.comments.each do |comment| %>
-	<%= current_user.email %>:<br />
-	<%= comment.comment_text %><br />
-	<%= comment.created_at.to_date %><br /><br />
+<%  @post.comments.each do |c| %>
+	<%= c.user.email %>:<br />
+	<%= c.comment_text %><br />
+	<%= c.created_at.to_date %><br /><br />
 <% end %>

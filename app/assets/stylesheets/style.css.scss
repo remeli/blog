@@ -288,4 +288,89 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 }
 
 #page_show{
+	
+}
+
+// admin:
+#admin{
+  // begin rules:
+  width:1000px;
+  margin:0 auto;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  font:$main-font;
+  #header{
+    height:80px;
+    padding-top:30px;
+  }
+  .flash{
+    text-align:center;
+  }
+  h1{
+    font:$h1;
+    text-align:center;
+  }
+  a{
+    text-decoration:none;
+    color:#484848;
+    &:hover{
+      color:#767676;
+    }
+  }
+  #content{
+    padding:10px;
+    ul{
+      width:800px;
+      margin:0 auto;
+    }
+    ul li{
+      margin-bottom:10px;
+    }
+    ul li img{
+      width:20px;
+      height:20px;
+      margin-right:5px;
+    }
+  }
+  .show_admin{
+    width:900px;
+    margin:0 auto;
+    .new_button{
+      display:block;
+      font-size:20px;
+      margin-bottom:20px;
+      background:#7E7E7E;
+      width:200px;
+      @include radius;
+      padding:5px;
+      color:#fff;
+    }
+    ul li{
+      @include radius;
+      border:1px solid #ccc;
+      padding:7px;
+      margin-bottom:10px;
+      font-size:20px;
+      .admin_actions{
+        float:right;
+        margin-right:20px;
+      }
+      p{
+        margin:5px 0px 5px 0px;
+      }
+      .details{
+        font-size:11px;
+        margin-top:10px;
+        .created_at{
+          font-size:10px;
+          margin-top:10px;
+          color:#ccc;
+          
+        }
+      }
+    }
+  } 
+  // end rules
+
 }

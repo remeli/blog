@@ -9,11 +9,11 @@
     </p>
     <% if admin?(current_user) %>
       <div class="admin-link">
-        <%= link_to "Админка", "" %>
+        <%= link_to "Админка", admin_path %>
       </div>
     <% end %>
     <p class="submit">
-      <%= link_to "Выйти", log_out_path %>
+      <%= link_to "Выйти", log_out_path, :confirm => "Вы действительно хотите выйти?" %>
     </p>
   </div>
 </div>
