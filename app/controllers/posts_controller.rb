@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     
   def show
     @comment = Comment.new
-    @post = Post.find(params[:id])
+    find_post
     @title = @post.title
     respond_with @post
   end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @post = Post.find(params[:id])
+    find_post
     respond_with @post
   end
   
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   end
   
   def update
-    @post = Post.find(params[:id])
+    find_post
     if @post.update_attributes(params[:post])
       flash[:notice] = 'Пост успешно обновлен'
       respond_with(@post, :location => @post)
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = Post.find(params[:id])
+    find_post
     @post.destroy
   end
   
@@ -62,11 +62,16 @@ class PostsController < ApplicationController
   end
   
   def ver_edit
+    find_post
     if current_user.id == @post.user.id
       true
     else
       redirect_to current_user, :notice => "Действия запрещены!"
     end
+  end
+  
+  def find_post
+    @post = Post.find(params[:id])
   end
   
 end
