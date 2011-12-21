@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   layout 'signup'
   
   def index
-    UsersController.layout 'application'
+    render :layout => 'application'
     @title = "Все пользователи"
   end
   
