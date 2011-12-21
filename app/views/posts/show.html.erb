@@ -1,3 +1,7 @@
+<div class="show_post_l">
+	<%= link_to "Просмотр всех постов", posts_path %><br />
+	<%= link_to("Посты категории "+@post.category.name, category_path(@post.category)) %>	
+</div>
 <div id="post_show">
   <div id="post_show_title">
     <%= @post.title %><br/>

@@ -1,15 +1,17 @@
 <div class="static_pages_index">
   <ul>
     <% @pages.each do |p| %>
-      <li>
-        <%= p.name %>
-        <div class="details">          
-          <p><b>Текст:</b><%= trunc(p.content) %></p>
-        	<div class="created_at">
-          	<%= to_date(p) %>
-          </div>
-        </div>
-      </li>
+			<div class="every_page">
+      	<li>
+        	<%= link_to p.name, page_path(p) %>
+        	<div class="details">          
+          	<p><b>Текст:</b><%= trunc(p.content) %></p>
+        		<div class="created_at">
+          		<%= to_date(p) %>
+          	</div>
+        	</div>
+      	</li>
+			</div>
     <% end %>
   </ul>
   <div id="pagination">

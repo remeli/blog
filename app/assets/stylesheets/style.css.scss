@@ -436,6 +436,30 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 }
 
 //static pages
+.static_pages_index{
+	.every_page{
+		border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+		a{
+			font-size: 20px;
+		}
+		.details{
+			padding: 10px;
+			.created_at{
+				padding-top: 10px;
+				font-size: 10px;
+			}
+		}
+	}
+}
+
 #page_show{
-	border: 1px solid #ccc;
+	margin: 20px;
+	font-size: 18px;
+	line-height: 26px;
+	p{
+		text-align: justify;
+		text-indent: 30px;
+	}
 }
