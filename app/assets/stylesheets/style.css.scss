@@ -523,3 +523,61 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 		font-size: 12px;
 	}
 }
+
+#all_comments{
+	.every_comment{
+		@include radius;
+		padding: 5px 10px 10px 5px;
+		margin: 5px;
+	}
+	.comments{
+		color: #7E7C80;
+		padding: 20px 0 0 10px;
+	}	
+	.comments_email{
+		font-weight:bold;
+		color: #6892C6;
+		padding-bottom: 10px;
+	}
+	.created_at{
+		font-size: 10px;
+		text-align: right;
+	}
+	hr{
+		border: 0;
+		height: 1px;
+		background-color: #DEDEDE;
+	}
+}
+
+#comment_form{
+	padding: 10px;
+	.field{
+    margin-top:20px;
+    font-size:18px;
+    label{
+      display:block;
+      margin-bottom:5px;
+      margin-right:20px;
+    }
+    input{
+      @include myinputs;
+      width:300px;
+    }
+    textarea{
+      @include myinputs;
+      width:400px;
+      height:180px;
+    }
+		textarea:focus{
+			-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+			-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+			box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+		}
+  }
+  .button{
+    margin-right:20%;
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+}
