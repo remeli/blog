@@ -8,10 +8,11 @@ Blog::Application.routes.draw do
   # resources:
   resources :sessions
   resources :users, :only => [:index, :show, :new, :create]
-  resources :posts, :only => [:index, :show, :new, :create] do
+  resources :posts do
     resources :comments
     get "page/:page.:format", :action => :index, :on => :collection, :defaults => { :format => "html"}
   end
+  
   resources :categories, :only => :show
   resources :pages, :only => [:index, :show]
   
