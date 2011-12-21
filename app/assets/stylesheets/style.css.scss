@@ -300,6 +300,21 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   #header{
     height:50px;
     padding-top:30px;
+    #adminmenu{
+      font:$small-font;
+      float:right;
+      position:relative;
+      bottom:20px;
+      p{
+        margin-bottom:5px;
+        a{
+          color:#68879F;
+          &:hover{
+            color:#AAB5C9;
+          }
+        }
+      }
+    }
   }
   .flash{
     text-align:center;
@@ -355,6 +370,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   .show_admin{
     width:900px;
     margin:0 auto;
+    margin-top:50px;
     .new_button{
       display:block;
       font-size:20px;
