@@ -4,7 +4,16 @@ class UsersController < ApplicationController
   before_filter :ver_in_system
   respond_to :html
   layout 'signup'
-
+  
+  def index
+    UsersController.layout 'application'
+    @title = "Все пользователи"
+  end
+  
+  def show
+    UsersController.layout 'application'
+  end
+  
   def new
     @user = User.new
     @title = "Регистрация"
