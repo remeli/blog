@@ -37,4 +37,11 @@ module ApplicationHelper
   def to_date(object)
     object.created_at.to_date
   end
+  
+  def owner?(object)
+    if current_user.id == object.user.id
+      true
+    end
+  end
+  
 end
