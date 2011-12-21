@@ -235,6 +235,18 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   // end rules
 }
 
+#alert{
+	// begin rules
+  @include radius;
+  border:1px solid #7D1D24;
+  background:#F5F5F5;
+  color: #7D1431;
+  padding:3px;
+  text-align:center;
+  margin:10px 0px 20px 0px;
+  // end rules
+}
+
 // add post form
 #add-post-from-user{
   padding:0px 10px 0px 10px;
