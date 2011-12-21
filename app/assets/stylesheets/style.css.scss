@@ -430,7 +430,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     @include radius;
     margin-right:5px;
     a{
-      color:#fff;
+      color:#fff !important;
     }
   }
 }
