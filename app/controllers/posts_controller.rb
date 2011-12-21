@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
   before_filter :load_user, :only => [:new, :create]
+  before_filter :ver_edit, :only => [:edit, :update, :destroy]
   respond_to :html
   
   def index
@@ -59,5 +60,13 @@ class PostsController < ApplicationController
   def load_user
     @user = current_user
   end
-
+  
+  def ver_edit
+    if current_user.id == @post.user.id
+      true
+    else
+      redirect_to current_user, :notice => "Действия запрещены!"
+    end
+  end
+  
 end
