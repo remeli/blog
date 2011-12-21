@@ -1,13 +1,16 @@
 <div class="static_pages_index">
   <ul>
-    <% @pages.each do |p| %>
+    <% @users.each do |p| %>
 			<div class="every_page">
       	<li>
-        	<%= link_to p.name, p %>
+        	<%= link_to p.email, p %>
       	</li>
 			</div>
     <% end %>
   </ul>
   <div class="clear"> 
+  </div>
+  <div id="pagination">
+		<%= paginate @users %>
   </div>
 </div>

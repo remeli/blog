@@ -2,6 +2,8 @@
 class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :load_user, :only => [:new, :create]
+  before_filter :ver_edit, :only => [:edit, :update, :destroy]
   respond_to :html
   
   def index
@@ -12,24 +14,24 @@ class PostsController < ApplicationController
     
   def show
     @comment = Comment.new
-    @post = Post.find(params[:id])
+    find_post
     @title = @post.title
     respond_with @post
   end
   
   def new
-    @post = Post.new
+    @post = @user.posts.new
     @title = "Добавление поста"
     respond_with @post
   end
   
   def edit
-    @post = Post.find(params[:id])
+    find_post
     respond_with @post
   end
   
   def create
-    @post = Post.new(params[:post])
+    @post = @user.posts.new(params[:post])
     if @post.save
       flash[:notice] = 'Пост успешно добавлен'
       respond_with(@post, :location => root_path)
@@ -39,7 +41,7 @@ class PostsController < ApplicationController
   end
   
   def update
-    @post = Post.find(params[:id])
+    find_post
     if @post.update_attributes(params[:post])
       flash[:notice] = 'Пост успешно обновлен'
       respond_with(@post, :location => @post)
@@ -49,10 +51,29 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = Post.find(params[:id])
+    find_post
     @post.destroy
+    flash[:notice] = "Запись успешно удалена"
+    redirect_to current_user
   end
   
-  # todo: сделать список постов current_user, он может их удалять/редактировать
-
+  private
+  
+  def load_user
+    @user = current_user
+  end
+  
+  def ver_edit
+    find_post
+    if current_user.id == @post.user.id
+      true
+    else
+      redirect_to current_user, :notice => "Действия запрещены!"
+    end
+  end
+  
+  def find_post
+    @post = Post.find(params[:id])
+  end
+  
 end
