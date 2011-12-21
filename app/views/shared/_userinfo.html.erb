@@ -7,6 +7,9 @@
     <p class="add-post">
       <%= link_to "Добавить пост", new_post_path, :method => :get %>
     </p>
+    <p class="add-post">
+      <%= link_to "Мои посты", current_user %>
+    </p>
     <% if admin?(current_user) %>
       <div class="admin-link">
         <%= link_to "Админка", admin_path %>
