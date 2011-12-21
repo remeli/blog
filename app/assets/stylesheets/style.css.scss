@@ -91,6 +91,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          }
        }
      }
+     .last-item{
+       float:right;
+     }
    }
  }
  
@@ -126,12 +129,13 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          padding:10px 0px 10px 10px;
        }
        .add-post{
-         
           margin:5px 0px 10px 7px;
           a{
             padding:5px;
             background:#B5D0AD;
             color:#fff;
+            display:block;
+            width:80px;
             @include radius;
             &:hover{
               background:#BDDBBF;
@@ -154,13 +158,13 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
        margin-bottom:20px;
        padding:8px;
        a{
-         color:#C06D35;
+         color:#7FBF67;
          font-weight:bold;
          display: inline-block;
          margin-bottom:5px;
          padding:2px;
          &:hover{
-           background:#C06D35;
+           background:#7FBF67;
            color:$white;
          }
        }
@@ -509,19 +513,12 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 
 //static pages
 .static_pages_index{
+  border-left:4px solid #94C67D;
 	.every_page{
-		border: 1px solid #ccc;
-		padding: 10px;
-		margin-bottom: 10px;
+	  padding-left:10px;
+		margin-bottom: 5px;
 		a{
-			font-size: 20px;
-		}
-		.details{
-			padding: 10px;
-			.created_at{
-				padding-top: 10px;
-				font-size: 10px;
-			}
+			font-size: 13px;
 		}
 	}
 }

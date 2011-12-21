@@ -30,7 +30,13 @@ class ApplicationController < ActionController::Base
       else
         redirect_to(log_in_path, :notice => "Пожалуйста авторизируйтесь")
       end
-
+    end
+    
+    # if user in system
+    def ver_in_system
+      if current_user
+        redirect_to(root_path, :notice => "Вы уже в системе")
+      end
     end
     
 end

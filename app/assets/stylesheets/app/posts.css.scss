@@ -34,10 +34,14 @@
     margin-bottom:5px;
   }
   #post_index_description {
-  border-bottom: 2px solid #48758f;
   padding-bottom:10px;
   }
-  
+  .actions{
+    text-align:right;
+    a{
+      font-size:11px;
+    }
+  }
   #pagination {
     margin-top:20px;
   }
