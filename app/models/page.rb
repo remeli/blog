@@ -18,6 +18,7 @@ class Page < ActiveRecord::Base
   validates :content, :presence => {:message => "Пустой контент"}
   
   default_scope order("name ASC")
+  scope :menu, limit(8)
   
   def button_value
     if new_record?

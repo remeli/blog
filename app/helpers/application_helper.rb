@@ -1,5 +1,14 @@
 # encoding:UTF-8
 module ApplicationHelper
+
+  def title
+    base_title = "WebDev blog"
+    if @title
+      "#{base_title} / #{@title}"
+    else
+      base_title
+    end
+  end
   
   def errors_for_object(object)
     render(:partial => "shared/errors", :locals => { :object => object}) if object.errors.any?
