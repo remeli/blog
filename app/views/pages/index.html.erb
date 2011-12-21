@@ -3,20 +3,11 @@
     <% @pages.each do |p| %>
 			<div class="every_page">
       	<li>
-        	<%= link_to p.name, page_path(p) %>
-        	<div class="details">          
-          	<p><b>Текст:</b><%= trunc(p.content) %></p>
-        		<div class="created_at">
-          		<%= to_date(p) %>
-          	</div>
-        	</div>
+        	<%= link_to p.name, p %>
       	</li>
 			</div>
     <% end %>
   </ul>
-  <div id="pagination">
-    <%= paginate(@pages) %>
-  </div>
   <div class="clear"> 
   </div>
 </div>

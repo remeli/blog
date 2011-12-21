@@ -91,6 +91,9 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
          }
        }
      }
+     .last-item{
+       float:right;
+     }
    }
  }
  
@@ -497,19 +500,12 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 
 //static pages
 .static_pages_index{
+  border-left:4px solid #94C67D;
 	.every_page{
-		border: 1px solid #ccc;
-		padding: 10px;
-		margin-bottom: 10px;
+	  padding-left:10px;
+		margin-bottom: 5px;
 		a{
-			font-size: 20px;
-		}
-		.details{
-			padding: 10px;
-			.created_at{
-				padding-top: 10px;
-				font-size: 10px;
-			}
+			font-size: 13px;
 		}
 	}
 }
