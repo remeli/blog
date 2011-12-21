@@ -2,8 +2,11 @@
 
 class PagesController < ApplicationController
   
+  respond_to :html
+  
   def index
     @pages = Page.all
+    @title = "Страницы"
   end
   
   def show
@@ -12,6 +15,8 @@ class PagesController < ApplicationController
       raise ActiveRecord::RecordNotFound, "Страница не найдена" if @page.nil?
     else
       @page = Page.find(params[:id])
+      @title = @page.name
+      respond_with @page
     end
   end
   

@@ -6,17 +6,20 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.page(params[:page]).per(5)
+    @title = "Посты"
     respond_with @posts
   end
     
   def show
     @comment = Comment.new
     @post = Post.find(params[:id])
+    @title = @post.title
     respond_with @post
   end
   
   def new
     @post = Post.new
+    @title = "Добавление поста"
     respond_with @post
   end
   
@@ -49,5 +52,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
   end
+  
+  # todo: сделать список постов current_user, он может их удалять/редактировать
 
 end

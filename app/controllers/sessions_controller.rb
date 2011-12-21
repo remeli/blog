@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   layout 'signup'
   
   def new
+    @title = "Вход в систему"
   end
   
   def create
