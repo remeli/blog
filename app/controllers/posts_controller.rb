@@ -2,6 +2,7 @@
 class PostsController < ApplicationController
   
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :load_user, :only => [:new, :create]
   respond_to :html
   
   def index
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   end
   
   def new
-    @post = Post.new
+    @post = @user.post.new
     @title = "Добавление поста"
     respond_with @post
   end
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(params[:post])
+    @post = @user.post.new(params[:post])
     if @post.save
       flash[:notice] = 'Пост успешно добавлен'
       respond_with(@post, :location => root_path)
@@ -53,6 +54,10 @@ class PostsController < ApplicationController
     @post.destroy
   end
   
-  # todo: сделать список постов current_user, он может их удалять/редактировать
+  private
+  
+  def load_user
+    @user = current_user
+  end
 
 end
