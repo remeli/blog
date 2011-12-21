@@ -225,7 +225,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   @include radius;
   border:1px solid #A8C990;
   background:#A8C990;
-  color:$white;
+  color: $white;
   padding:3px;
   text-align:center;
   margin:10px 0px 20px 0px;
@@ -287,8 +287,11 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
   color:#7D1431;
 }
 
-#page_show{
-	
+#category_show{
+	.category_title{
+		color:#6892C6;
+		font-size: 20px;
+	}
 }
 
 // admin:
