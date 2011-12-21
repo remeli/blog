@@ -1,5 +1,5 @@
 <% if user_has? %>
-  <%= form_for @comment do |f| %>
+  <%= form_for [@post, @comment] do |f| %>
   	<%= f.text_area :comment_text, :rows => 10 %><br />
   	<%= f.hidden_field :post_id, :value => @post.id %>
   	<%= f.hidden_field :user_id, :value => current_user.id %>

@@ -8,10 +8,11 @@ Blog::Application.routes.draw do
   # resources:
   resources :sessions
   resources :users, :only => [:new, :create]
-  resources :posts, :only => [:index, :show, :new, :create]
+  resources :posts, :only => [:index, :show, :new, :create] do
+    resources :comments
+  end
   resources :categories, :only => :show
   resources :pages, :only => [:index, :show]
-  resources :comments
   
   # match '/:permalink', :to => "pages#show"
   match 'static/:permalink', :to => "pages#show"
