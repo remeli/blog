@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -12,6 +12,16 @@
     <div id="logo">
       <%= link_to image_tag('l.png', :title => "Blog"), root_path %>
     </div>
+  </div>
+  <div id="mainmenu">
+    <ul>
+      <% @menu_pages.each do |p| %>
+        <li><%= link_to p.name, p %></li>
+      <% end %>
+      <li class="last-item">
+        <%= link_to "Все страницы", pages_path %>
+      </li>
+    </ul>
   </div>
   <div id="maincontent">
     <div id="sidebar">

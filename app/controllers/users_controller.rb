@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @title = "Регистрация"
     respond_with(@user)
   end
   
