@@ -397,3 +397,21 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 .clear{
   clear:both;
 }
+
+// pagintation:
+#pagination{
+  margin-top:20px;
+  margin-bottom:60px;
+  span{
+    display:block;
+    background:#818181;
+    color:#ccc;
+    padding:5px;
+    float:left;
+    @include radius;
+    margin-right:5px;
+    a{
+      color:#fff;
+    }
+  }
+}
