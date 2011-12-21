@@ -8,7 +8,7 @@
 	  <%= link_to 'Далее', post %>
   </div>
   <% if owner?(post) %>
-    <div class="action">
+    <div class="actions">
       <%= link_to "Редактировать", edit_post_path(post) %>
       <%= link_to "Удалить", post, :method => :delete, :confirm => "Вы уверены?" %>
     </div>
