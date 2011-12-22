@@ -43,6 +43,9 @@
         <li><a href="#">О нас</a></li>
         <li><a href="#">Контакты</a></li>
       </ul>
+			<div id="RSS">
+				<%= link_to image_tag("rss.png"), posts_url(:rss)%>
+			</div>
 			<div id="categories">
 				<div class="categories_title">Категории:</div>
 					<% Category.all.each do |category| %>

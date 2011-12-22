@@ -614,3 +614,16 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-bottom:20px;
   }
 }
+
+#RSS{
+	margin: 10px 0 10px 0;
+	a{
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
+}
