@@ -41,4 +41,13 @@ class UsersController < ApplicationController
     render :layout => 'application'
   end
   
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Вы успешно обновили настройки"
+      respond_with(@user, :location => root_path)
+    else
+      render 'settings'
+    end
+  end
 end
