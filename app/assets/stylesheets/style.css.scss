@@ -614,3 +614,40 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-bottom:20px;
   }
 }
+
+// user settings:
+#settings{
+  @include radius;
+  border:1px solid #EAEAEA;
+  width:640px;
+  padding:10px;
+  margin:0 auto;
+  h1{
+    font-size:25px;
+  }
+  .field{
+    margin-top:10px;
+    label{
+      margin-bottom:5px;
+      display:block;
+    }
+    input[type='text'], input[type='password']{
+      background:#f0f0f0;
+      border:none;
+      font-size: 13px;
+      padding: 6px 3px 4px;
+      outline: none !important;
+      border: solid 1px #BBB;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      width:235px;
+      &:focus{
+        background:#fff;
+      }
+    }
+  }
+  .button{
+    margin-top:10px;
+  }
+}

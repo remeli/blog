@@ -1,11 +1,13 @@
-<h1>Настройка профиля:</h1>
-<%= form_for(@user) do |f| %>
-  <%= errors_for_object(@user) %>
-  <div class="field">
-    <%= f.label :nickname, "Никнэйм:" %>
-    <%= f.text_field :nickname %>  
-  </div>
-  <div class="button">
-    <%= f.submit "Отправить" %>
-  </div>
-<% end %>
+<div id="settings">
+  <h1>Настройка профиля:</h1>
+  <%= form_for(@user) do |f| %>
+    <%= errors_for_object(@user) %>
+    <div class="field">
+      <%= f.label :nickname, "Никнэйм:" %>
+      <%= f.text_field :nickname %>  
+    </div>
+    <div class="button">
+      <%= f.submit "Отправить" %>
+    </div>
+  <% end %>  
+</div>
