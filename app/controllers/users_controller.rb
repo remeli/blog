@@ -35,4 +35,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def settings
+    @user = User.find(params[:id])
+    @title = "Настройки"
+    render :layout => 'application'
+  end
+  
 end

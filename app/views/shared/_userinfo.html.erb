@@ -10,6 +10,9 @@
     <p class="add-post">
       <%= link_to "Мои посты", current_user %>
     </p>
+    <p class="add-post">
+      <%= link_to "Настройки", settings_user_path(current_user) %>
+    </p>
     <% if admin?(current_user) %>
       <div class="admin-link">
         <%= link_to "Админка", admin_path %>
