@@ -40,8 +40,12 @@ module ApplicationHelper
   end
   
   def owner?(object)
-    if current_user.id == object.user.id
-      true
+    unless current_user
+      false
+    else
+      if current_user.id == object.user.id
+        true
+      end
     end
   end
   
