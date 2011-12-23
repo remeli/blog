@@ -20,14 +20,24 @@ class User < ActiveRecord::Base
   
   validates :password, :confirmation => {:message => "Пароли не совпадают"}
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
-  validates :email, :presence => {:message => "Пустой e-mail"}
-  validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
+  
   validates :nickname, :uniqueness => {:message => "Такой никнэйм уже есть"}
   validates :nickname, :length => { :minimum => 2, :message => "Никнэйм меньше двух символов"}
+  
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, :presence => {:message => "Пустой e-mail"}
+  validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
   validates :email, :format => { :with => email_regex, :message => "Неправильный формат email"}
 
   default_scope order("created_at DESC")
+  
+  # paperclip:
+  has_attached_file :avatar, :styles => { :thumb => "100x100>"},
+  :url => "/system/:attachment/:id/:style/:basename.:extension",
+  :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension",
+  :default_url => "/assets/avatar.jpg"
+  validates_attachment_size :cover, :less_than => 5.megabytes
+  validates_attachment_content_type :cover, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   
   def encrypt_password
     if password.present?
