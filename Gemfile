@@ -20,7 +20,7 @@ gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem "bcrypt-ruby", :require => "bcrypt"
-
+gem "paperclip"
 # In future:
 # gem 'unicorn'
 # gem 'capistrano'

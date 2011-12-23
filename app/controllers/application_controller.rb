@@ -43,4 +43,8 @@ class ApplicationController < ActionController::Base
       end
     end
     
+    def username(object)
+      object.nickname ? object.nickname : object.email
+    end
+    
 end

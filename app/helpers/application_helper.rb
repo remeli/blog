@@ -1,5 +1,6 @@
 # encoding:UTF-8
 module ApplicationHelper
+  
 
   def title
     base_title = "WebDev blog"
@@ -42,6 +43,10 @@ module ApplicationHelper
     if current_user.id == object.user.id
       true
     end
+  end
+  
+  def username(object)
+    object.nickname ? object.nickname : object.email
   end
   
 end
