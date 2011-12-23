@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
   
 
   def set_nickname
-    self.nickname = email
+    if new_record?
+      self.nickname = email
+    end
   end
 end
