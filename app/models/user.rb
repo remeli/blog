@@ -13,9 +13,10 @@ class User < ActiveRecord::Base
   #
   
   attr_accessor :password
-  attr_accessible :email, :password, :password_confirmation, :admin, 
-                  :nickname, :avatar
+  attr_accessible :email, :password, :password_confirmation, :admin, :nickname, :avatar
+  
   before_save :encrypt_password
+  
   has_many :comments, :dependent => :destroy
   has_many :posts
   
@@ -23,7 +24,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
   
   validates :nickname, :uniqueness => {:message => "Такой никнэйм уже есть"}
-  validates :nickname, :length => { :minimum => 2, :message => "Никнэйм меньше двух символов"}
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :presence => {:message => "Пустой e-mail"}
