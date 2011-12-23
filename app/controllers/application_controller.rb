@@ -42,9 +42,5 @@ class ApplicationController < ActionController::Base
     def username(object)
       object.nickname ? object.nickname : object.email
     end
-   #  TODO:
-   #  ерлан: никнеймы, настройки пользователя
-   #  поиск по постам, сделать аватарки
-   #  
-   # 
+    
 end
