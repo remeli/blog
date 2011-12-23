@@ -1,10 +1,14 @@
 <div id="settings">
   <h1>Настройка профиля:</h1>
-  <%= form_for(@user) do |f| %>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
     <%= errors_for_object(@user) %>
     <div class="field">
       <%= f.label :nickname, "Никнэйм:" %>
       <%= f.text_field :nickname %>  
+    </div>
+    <div class="field">
+      <%= f.label :avatar, "Аватар" %>
+      <%= f.file_field :avatar %>
     </div>
     <div class="button">
       <%= f.submit "Отправить" %>
