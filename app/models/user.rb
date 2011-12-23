@@ -23,8 +23,6 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => {:message => "Пароли не совпадают"}
   validates :password, :presence => {:message => "Пустой пароль"} , :on => :create
   
-  validates :nickname, :uniqueness => {:message => "Такой никнэйм уже есть"}
-  
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :presence => {:message => "Пустой e-mail"}
   validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
@@ -63,5 +61,9 @@ class User < ActiveRecord::Base
       false
     end
   end
-
+  
+  private
+    def set_nickname
+      nickname = email
+    end
 end
