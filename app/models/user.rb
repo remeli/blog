@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :thumb => "100x100>"},
   :url => "/system/:attachment/:id/:style/:basename.:extension",
   :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension",
-  :default_url => "/assets/avatar.jpg"
+  :default_url => "/assets/avatar.png"
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   

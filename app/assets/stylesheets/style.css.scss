@@ -653,3 +653,13 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-top:10px;
   }
 }
+
+// avatar:
+.avatar{
+  padding:10px;
+  img{
+    @include radius;
+    width:100px;
+    height:100px;
+  }
+}
