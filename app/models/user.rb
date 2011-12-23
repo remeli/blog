@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :admin, :nickname, :avatar
   
   before_save :encrypt_password
+  before_save :set_nickname
   
   has_many :comments, :dependent => :destroy
   has_many :posts
@@ -62,8 +63,8 @@ class User < ActiveRecord::Base
     end
   end
   
-  private
-    def set_nickname
-      nickname = email
-    end
+
+  def set_nickname
+    self.nickname = email
+  end
 end
