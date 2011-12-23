@@ -38,6 +38,10 @@ class ApplicationController < ActionController::Base
         redirect_to(root_path, :notice => "Вы уже в системе")
       end
     end
+    
+    def username(object)
+      object.nickname ? object.nickname : object.email
+    end
    #  TODO:
    #  ерлан: никнеймы, настройки пользователя
    #  поиск по постам, сделать аватарки
