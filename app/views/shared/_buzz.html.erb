@@ -1,0 +1,6 @@
+<% @last_comments.each do |comment| %>
+	<%= comment.user.email %>
+	<%= comment.post.title %>
+	<%= comment.post.comments.count %>
+	<%= comment.created_at.to_time %>
+<% end %>

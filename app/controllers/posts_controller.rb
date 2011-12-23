@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.rss{render :layout => false}
       format.xml
+      format.html
     end
   end
     

@@ -16,5 +16,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
   validates :comment_text, :presence => true, :length => {:maximum => 200}
+  
+  scope :buzz, limit(5).reorder("created_at DESC")
 end
 

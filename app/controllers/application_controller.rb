@@ -2,7 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  before_filter :load_variables
+  before_filter :load_variables, :load_buzz
   
   private
     def current_user
@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     
     def load_variables
       @menu_pages = Page.menu
+    end
+    
+    def load_buzz
+      @last_comments = Comment.buzz
     end
     
   protected
