@@ -5,7 +5,11 @@
 	<%  @post.comments.each do |c| %>
 	<div class="every_comment">
 		<div class="comments_email">
-			<%= c.user.email %>:<br />
+			<div class="smallavatar">
+  		  <%= image_tag c.user.avatar.url(:thumb) %>
+  		  <%= c.user.email %>:
+  		</div>
+  		
 		</div>
 		<div class="comment_text">
 			<%= c.comment_text %><br />

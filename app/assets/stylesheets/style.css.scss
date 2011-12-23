@@ -614,7 +614,7 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-bottom:20px;
   }
 }
-
+// rss:
 #RSS{
 	margin: 10px 0 10px 0;
 	a{
@@ -668,4 +668,58 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
 			color: #7FBF67;
 		}
 	}
+}
+// user settings:
+#settings{
+  @include radius;
+  border:1px solid #EAEAEA;
+  width:640px;
+  padding:10px;
+  margin:0 auto;
+  h1{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:25px;
+  }
+  .field{
+    margin-top:10px;
+    label{
+      margin-bottom:5px;
+      display:block;
+    }
+    input[type='text'], input[type='password']{
+      background:#f0f0f0;
+      border:none;
+      font-size: 13px;
+      padding: 6px 3px 4px;
+      outline: none !important;
+      border: solid 1px #BBB;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      width:235px;
+      &:focus{
+        background:#fff;
+      }
+    }
+  }
+  .button{
+    margin-top:10px;
+  }
+}
+
+// avatar:
+.avatar{
+  padding:10px;
+  img{
+    @include radius;
+    width:100px;
+    height:100px;
+  }
+}
+.smallavatar{
+  img{
+    width:30px;
+    height:30px;
+  }
 }

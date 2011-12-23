@@ -1,11 +1,14 @@
 <div id="posts">
   <%  @posts.each do |post| %>
   <div id="post_index_title">
-	  <%= link_to(post.title, post) %><br />
+	  <%= link_to post.category.name, post.category %> &rarr; <%= link_to(post.title, post) %>
 	</div>
 	<div id="post_index_description">
 	  <%= trunc(post.description, 350) %>
 	  <%= link_to 'Далее', post %>
+	  <div class="username">
+	    Автор: <%= link_to username(post.user), post.user %>
+	  </div>
   </div>
   <% end %>
   <div id="pagination">

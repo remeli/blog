@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(10)
-    @title = "Блог пользователя: #{@user.email}"
+    @title = "Блог пользователя: #{username(@user)}"
     render :layout => 'application'
   end
   
@@ -35,4 +35,19 @@ class UsersController < ApplicationController
     end
   end
   
+  def settings
+    @user = User.find(params[:id])
+    @title = "Настройки"
+    render :layout => 'application'
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Вы успешно обновили настройки"
+      respond_with(@user, :location => root_path)
+    else
+      render 'settings', :layout => 'application'
+    end
+  end
 end

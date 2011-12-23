@@ -3,7 +3,7 @@
     <% @users.each do |p| %>
 			<div class="every_page">
       	<li>
-        	<%= link_to p.email, p %>
+        	<%= link_to username(p), p %>
       	</li>
 			</div>
     <% end %>
