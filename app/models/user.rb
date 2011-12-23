@@ -36,8 +36,8 @@ class User < ActiveRecord::Base
   :url => "/system/:attachment/:id/:style/:basename.:extension",
   :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension",
   :default_url => "/assets/avatar.jpg"
-  validates_attachment_size :cover, :less_than => 5.megabytes
-  validates_attachment_content_type :cover, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  validates_attachment_size :avatar, :less_than => 5.megabytes
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   
   def encrypt_password
     if password.present?
