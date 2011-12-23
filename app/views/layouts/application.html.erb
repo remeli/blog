@@ -47,12 +47,22 @@
 				<%= link_to image_tag("rss.png"), posts_url(:rss)%>
 			</div>
 			<div id="categories">
-				<div class="categories_title">Категории:</div>
+				<div class="categories_title">
+					Категории:
+				</div>
 					<% Category.all.each do |category| %>
 						<div class="category_link">
 							<%= link_to category.name, category_path(category) %>
 						</div>
 					<% end %>	
+			</div>
+			<div id="buzz">
+				<div class="buzz_title">
+					Живая лента:
+				</div>
+				<div class="buzz_content">
+					<%= render 'shared/buzz' %>
+				</div>
 			</div>
     </div>
     <div id="content">
