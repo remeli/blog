@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => {:message => "Пустой e-mail"}
   validates :email, :uniqueness => {:message => "Такой e-mail уже есть"}
   validates :nickname, :uniqueness => {:message => "Такой никнэйм уже есть"}
-  validates :nickname, :length => { :minumum => 2, :message => "Никнэйм меньше двух символов"}
+  validates :nickname, :length => { :minimum => 2, :message => "Никнэйм меньше двух символов"}
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :format => { :with => email_regex, :message => "Неправильный формат email"}
 
