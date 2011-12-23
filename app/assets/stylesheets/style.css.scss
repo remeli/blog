@@ -614,6 +614,60 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     margin-bottom:20px;
   }
 }
+// rss:
+#RSS{
+	margin: 10px 0 10px 0;
+	a{
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
+}
+
+#buzz{
+	@include radius;
+	margin-top: 20px;
+	font:$small-font;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	padding-bottom:3px;
+	.buzz_title{
+		background:#7E7C80;
+		color:$white;
+		padding:5px;
+		margin-bottom:3px;
+	}
+	.buzz_content{
+		width: 80%;
+		@include radius;
+		border: 1px solid #ccc;
+		border-right: 1.5px solid #DEDEDE;
+		border-left: 0;
+		border-top: 1px solid #F1F1F1;
+		margin-bottom: 10px;
+		padding-bottom:3px;		
+		.buzz_email{
+			a{
+				font-size: 11px;
+				color:#7E7C80;  
+			}
+		}
+		.buzz_post_title{
+			font-size: 14px;
+		}
+		.buzz_comments_count{
+			font-size: 10px;
+			text-align:right;
+			padding-right: 15px;
+			padding-bottom: 10px;
+			display:block;
+			color: #7FBF67;
+		}
+	}
 
 // user settings:
 #settings{

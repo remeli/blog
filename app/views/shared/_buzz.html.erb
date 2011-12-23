@@ -1,0 +1,25 @@
+<% @last_comments.each do |comment| %>
+	<div class="buzz_content">
+		<ul>
+			<li>
+				<div class="buzz_email">
+					<%= link_to comment.user.email, '#' %>
+				</div> 
+				<div class="buzz_text">
+					комментирует
+				</div>
+			</li>
+			<li>
+				<div class="buzz_post_title">
+					<%= link_to comment.post.title, post_path(comment.post) %>
+				</div>
+			</li>
+			<li>
+				<div class="buzz_comments_count">
+					<%= comment.post.comments.count %>
+					<%= Russian.p(comment.post.comments.count, "комментарий", "комментария", "комментариев") %>	
+				</div>
+			</li>
+		</ul>
+	</div>
+<% end %>

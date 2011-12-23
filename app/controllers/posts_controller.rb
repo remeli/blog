@@ -9,7 +9,11 @@ class PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page]).per(5)
     @title = "Посты"
-    respond_with @posts
+    respond_to do |format|
+      format.rss{render :layout => false}
+      format.xml
+      format.html
+    end
   end
     
   def show
