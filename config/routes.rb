@@ -7,7 +7,7 @@ Blog::Application.routes.draw do
   
   # resources:
   resources :sessions
-  resources :users, :only => [:index, :show, :new, :create] do
+  resources :users, :only => [:index, :show, :new, :create, :update] do
     get 'settings', :on => :member
   end
   resources :posts do

@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Вы успешно обновили настройки"
       respond_with(@user, :location => root_path)
     else
-      render 'settings'
+      render 'settings', :layout => 'application'
     end
   end
 end
