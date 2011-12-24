@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     end
     
     def load_buzz
-      @last_comments = Comment.buzz
+      @last_comments = Comment.buzz 
     end
     
   protected
