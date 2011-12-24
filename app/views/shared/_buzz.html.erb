@@ -1,4 +1,4 @@
-<% if @last_comments == [] %>
+<% if empty_buzz?(@last_comments) %>
 	<p>Комментариев пока нет</p>
 <% else %>
 	<% @last_comments.each do |comment| %>
@@ -14,15 +14,11 @@
 				</li>
 				<li>
 					<div class="buzz_post_title">
-						<% if comment.post == nil %>
-							К сожалению, этот пост был удален.
-						<% else %>
 						<%= link_to comment.post.title, post_path(comment.post) %>
 						<span class="buzz_comments_count">
   						<%= comment.post.comments.count %>
   						<%= Russian.p(comment.post.comments.count, "комментарий", "комментария", "комментариев") %>	
   					</span>
-						<% end %>
 					</div>
 				</li>
 			</ul>
