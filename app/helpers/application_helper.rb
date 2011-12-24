@@ -53,4 +53,12 @@ module ApplicationHelper
     object.nickname ? object.nickname : object.email
   end
   
+  def empty_buzz?(object)
+    if object.empty?
+      true
+    else
+      false
+    end
+  end
+  
 end
