@@ -1,4 +1,35 @@
 Blog::Application.routes.draw do
+  
+  # matches:
+  match "sign_up" => "users#new", :as => "sign_up"
+  match "log_in" => "sessions#new", :as => "log_in"
+  match "log_out" => "sessions#destroy", :as => "log_out"
+  
+  # resources:
+  resources :sessions
+  resources :users, :only => [:index, :show, :new, :create, :update] do
+    get 'settings', :on => :member
+  end
+  resources :posts do
+    resources :comments
+    get "page/:page.:format", :action => :index, :on => :collection, :defaults => { :format => "html"}
+  end
+  
+  resources :categories, :only => :show
+  resources :pages, :only => [:index, :show]
+  
+  # match '/:permalink', :to => "pages#show"
+  match 'static/:permalink', :to => "pages#show"
+  
+  # admin:
+  match "admin" => "admin#index", :as => "admin"
+  namespace :admin do
+    resources :posts, :except => [:new, :create]
+    resources :users, :except => [:new, :create]
+    resources :categories, :except => [:show]
+    resources :pages, :except => [:show]
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,11 +79,12 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'static#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+
 end

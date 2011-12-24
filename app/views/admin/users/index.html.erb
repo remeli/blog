@@ -1,0 +1,31 @@
+<div class="flash">
+  <% flash.each do |name, msg| %>
+    <p id="flash"><%= msg %></p>
+  <% end %>  
+</div>
+<div class="show_admin">
+  <ul>
+    <% @users.each do |p| %>
+      <li>
+        <%= p.email %>
+        <span class="admin_actions">
+          <%= link_to edit_img, edit_admin_user_path(p) %>
+          <%= link_to delete_img, admin_user_path(p), :method => :delete, :confirm => "Вы уверены?" %>
+        </span>
+        <div class="details">
+          <% if admin?(p) %>
+          <p><b>Администратор</b></p>
+          <% end %>
+          <div class="created_at">
+            <%= to_date(p) %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div id="pagination">
+    <%= paginate(@users) %>
+  </div>
+  <div class="clear"> 
+  </div>
+</div>

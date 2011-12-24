@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  permalink: MyString
+  content: MyText
+
+two:
+  name: MyString
+  permalink: MyString
+  content: MyText
+# == Schema Information
+#
+# Table name: pages
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  permalink  :string(255)
+#  content    :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+

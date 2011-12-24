@@ -1,0 +1,23 @@
+<div id="comment_form">
+	<% if user_has? %>
+	  <%= form_for [@post, @comment] do |f| %>
+			<% if alert %>
+				<p id="alert"><%= alert %></p>
+			<% end %>
+			<div class="field">
+				<%= f.label :comment_text, "Текст комментария:" %><br />
+	  		<%= f.text_area :comment_text, :rows => 10 %><br />
+			</div>
+	  	<%= f.hidden_field :post_id, :value => @post.id %>
+	  	<%= f.hidden_field :user_id, :value => current_user.id %>
+			<div class="button">
+	  		<%= f.submit "Добавить комментарий" %>
+			</div>
+	  <% end %>  
+	<% else %>
+	  <div id="add-comment-no-user">
+	    Только зарегистрированные пользователи могут оставлять комментарии.
+	    Пожалуйста <%= link_to "Войдите", log_in_path %>
+	  </div>
+	<% end %>
+</div>

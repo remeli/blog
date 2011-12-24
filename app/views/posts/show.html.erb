@@ -1,0 +1,19 @@
+<div id="post_show">
+  <div class="post_show_title">
+    <%= @post.title %><br/>
+  </div>
+  <div class="post_show_description">
+    <%= raw(@post.description) %>
+  </div>
+  <div class="username">
+    Автор: <%= link_to username(@post.user), @post.user %>
+  </div>
+	<div class="show_post_l">
+		<p>
+			<%= link_to("Другие посты о "+@post.category.name, category_path(@post.category)) %>
+		</p>
+	</div>  
+</div>
+<%= render :partial => "shared/comments" %>
+<%= render :partial => "shared/comment_form" %>
+

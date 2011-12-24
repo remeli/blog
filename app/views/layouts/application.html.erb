@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <%= link_to image_tag('l.png', :title => "Blog"), root_path %>
+    </div>
+  </div>
+  <div id="mainmenu">
+    <ul>
+      <% @menu_pages.each do |p| %>
+        <li><%= link_to p.name, p %></li>
+      <% end %>
+      <li class="last-item">
+        <%= link_to "Все страницы", pages_path %>
+      </li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+  <div id="maincontent">
+    <div id="sidebar">
+      <% if current_user %>
+        <!-- user info -->
+        <%= render 'shared/userinfo' %>
+        <!-- end user info -->
+      <% else %>
+        <div id="sign">
+          <p><%= link_to "Регистрация", sign_up_path %></p>
+          <p><%= link_to "Войти", log_in_path %></p>
+        </div>
+      <% end %>
+      <ul>
+        <li><%= link_to "Главная", root_path %></li>
+        <li><%= link_to "Посты", posts_path %></li>
+        <li><%= link_to "Пользователи", users_path %></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+			<div id="RSS">
+				<%= link_to image_tag("rss.png"), posts_url(:rss)%>
+			</div>
+			<div id="categories">
+				<div class="categories_title">
+					Категории:
+				</div>
+					<% Category.all.each do |category| %>
+						<div class="category_link">
+							<%= link_to category.name, category_path(category) %>
+						</div>
+					<% end %>	
+			</div>
+			<div id="buzz">
+				<div class="buzz_title">
+					Живая лента:
+				</div>
+					<%= render 'shared/buzz' %>
+			</div>
+    </div>
+    <div id="content">
+      <% if notice %>
+        <p id="notice"><%= notice %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <p>&copy; Our blog</p>
+  </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<div id="about_user">
+  <div class="content">
+    <p>Пользователь: <span class="name"><%= username(@user) %></span></p>
+    <p>Количество постов: <%= @user.posts.count %></p>
+    <p>Количество комментариев: <%= @user.comments.count %></p>
+    <p>Дата регистрации: <%= to_date(@user) %></p>
+  </div>
+  <div class="av">
+    <%= image_tag @user.avatar.url(:thumb) %>
+  </div>
+  <div class="clear">
+    
+  </div>
+</div>
+<div id="posts">
+  <%  @posts.each do |post| %>
+  <div id="post_index_title">
+	  <%= link_to(post.title, post) %><br />
+	</div>
+	<div id="post_index_description">
+	  <%= trunc(post.description, 350) %>
+	  <%= link_to 'Далее', post %>
+  </div>
+  <% if owner?(post) %>
+    <div class="actions">
+      <%= link_to "Редактировать", edit_post_path(post) %>
+      <%= link_to "Удалить", post, :method => :delete, :confirm => "Вы уверены?" %>
+    </div>
+  <% end %>
+  <% end %>
+  <div id="pagination">
+		<%= paginate @posts %>
+  </div>
+</div>
