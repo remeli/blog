@@ -1,0 +1,30 @@
+<div class="flash">
+  <% flash.each do |name, msg| %>
+    <p id="flash"><%= msg %></p>
+  <% end %>  
+</div>
+<div class="show_admin">
+  <%= link_to "Создать страницу", new_admin_page_path, :class => "new_button" %>
+  <ul>
+    <% @pages.each do |p| %>
+      <li>
+        <%= p.name %>
+        <span class="admin_actions">
+          <%= link_to edit_img, edit_admin_page_path(p) %>
+          <%= link_to delete_img, admin_page_path(p), :method => :delete, :confirm => "Вы уверены?" %>
+        </span>
+        <div class="details">          
+          <p><b>Текст:</b><%= trunc(p.content) %></p>
+          <div class="created_at">
+            <%= to_date(p) %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div id="pagination">
+    <%= paginate(@pages) %>
+  </div>
+  <div class="clear"> 
+  </div>
+</div>

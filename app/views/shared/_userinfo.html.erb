@@ -1,0 +1,28 @@
+<div id="userinfo">
+  <h4>Ваш профиль:</h4>
+  <div class="user-actions">
+    <p class="email">
+      <%= current_user.email %>
+    </p>
+    <p class="avatar">
+      <%= image_tag current_user.avatar.url(:thumb) %>
+    </p>
+    <p class="add-post">
+      <%= link_to "Добавить пост", new_post_path, :method => :get %>
+    </p>
+    <p class="add-post">
+      <%= link_to "Мои посты", current_user %>
+    </p>
+    <p class="add-post">
+      <%= link_to "Настройки", settings_user_path(current_user) %>
+    </p>
+    <% if admin?(current_user) %>
+      <div class="admin-link">
+        <%= link_to "Админка", admin_path %>
+      </div>
+    <% end %>
+    <p class="submit">
+      <%= link_to "Выйти", log_out_path, :confirm => "Вы действительно хотите выйти?" %>
+    </p>
+  </div>
+</div>

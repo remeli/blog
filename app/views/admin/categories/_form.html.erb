@@ -1,0 +1,10 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= errors_for_object(@category) %>
+  <div class="field">
+    <%= f.label :name, 'Название:' %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="button">
+	  <%= f.submit @category.button_value %>
+  </div>
+<% end %>

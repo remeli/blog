@@ -1,0 +1,18 @@
+<%= form_for @post do |f| %>
+  <%= errors_for_object(@post) %>
+  <div class="field">
+    <%= f.label :category_id, 'Категория:' %>
+    <%= collection_select(:post, :category_id, Category.ascname, :id, :name) %>
+  </div>
+  <div class="field">
+  	<%= f.label :title, 'Заголовок:' %>
+  	<%= f.text_field :title %>
+  </div>
+  <div class="field">
+	  <%= f.label :description, 'Пост:' %>
+	  <%= f.text_area :description %>    
+  </div>
+  <div class="button">
+	  <%= f.submit @post.button_value %>    
+  </div>
+<% end %>
