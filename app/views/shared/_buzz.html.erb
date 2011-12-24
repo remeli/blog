@@ -1,23 +1,31 @@
-<% @last_comments.each do |comment| %>
-	<div class="buzz_content">
-		<ul>
-			<li>
-				<div class="buzz_email">
-					<%= link_to comment.user.email, '#' %>
-				</div> 
-				<div class="buzz_text">
-					комментирует
-				</div>
-			</li>
-			<li>
-				<div class="buzz_post_title">
-					<%= link_to comment.post.title, post_path(comment.post) %>
-					<span class="buzz_comments_count">
-  					<%= comment.post.comments.count %>
-  					<%= Russian.p(comment.post.comments.count, "комментарий", "комментария", "комментариев") %>	
-  				</span>
-				</div>
-			</li>
-		</ul>
-	</div>
+<% if @last_comments == [] %>
+	<p>Комментариев пока нет</p>
+<% else %>
+	<% @last_comments.each do |comment| %>
+		<div class="buzz_content">
+			<ul>
+				<li>
+					<div class="buzz_email">
+						<%= link_to comment.user.email, '#' %>
+					</div> 
+					<div class="buzz_text">
+						комментирует
+					</div>
+				</li>
+				<li>
+					<div class="buzz_post_title">
+						<% if comment.post == nil %>
+							К сожалению, этот пост был удален.
+						<% else %>
+						<%= link_to comment.post.title, post_path(comment.post) %>
+						<span class="buzz_comments_count">
+  						<%= comment.post.comments.count %>
+  						<%= Russian.p(comment.post.comments.count, "комментарий", "комментария", "комментариев") %>	
+  					</span>
+						<% end %>
+					</div>
+				</li>
+			</ul>
+		</div>
+	<% end %>
 <% end %>
