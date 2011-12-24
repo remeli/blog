@@ -1,3 +1,17 @@
+<div id="about_user">
+  <div class="content">
+    <p>Пользователь: <span class="name"><%= username(@user) %></span></p>
+    <p>Количество постов: <%= @user.posts.count %></p>
+    <p>Количество комментариев: <%= @user.comments.count %></p>
+    <p>Дата регистрации: <%= to_date(@user) %></p>
+  </div>
+  <div class="av">
+    <%= image_tag @user.avatar.url(:thumb) %>
+  </div>
+  <div class="clear">
+    
+  </div>
+</div>
 <div id="posts">
   <%  @posts.each do |post| %>
   <div id="post_index_title">

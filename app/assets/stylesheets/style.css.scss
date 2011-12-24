@@ -719,3 +719,29 @@ $small-font: 11px "Graublau Web", Helvetica, sans-serif;
     height:30px;
   }
 }
+
+// about user
+#about_user{
+  border:1px solid #ddd;
+  @include radius;
+  padding:5px;
+  .content{
+    float:left;
+    font:$small-font;
+    color:#929292;
+    p{
+      .name{
+        font-weight:bold;
+      }
+      margin-bottom:5px;
+    }
+  }
+  .av{
+    img{
+      @include radius;
+      height:60px;
+      width:60px;
+    }
+    float:right;
+  }
+}
