@@ -7,7 +7,7 @@
 		<div class="comments_email">
 			<div class="smallavatar">
   		  <%= image_tag c.user.avatar.url(:thumb) %>
-  		  <%= c.user.email %>:
+  		  <%= link_to c.user.email, c.user %>:
   		</div>
   		
 		</div>
